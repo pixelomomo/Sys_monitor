@@ -5,7 +5,11 @@
 #include <fstream>
 #include <string>
 #include <iphlpapi.h>
+#include <tchar.h>
+#include <stdio.h>
+
 using namespace std;
+
 void read_file(int& warningThreshold, int& alertThreshold);
 void disk_free_space(const char* driveLetter, int warningThreshold, int alertThreshold);
 void find_and_display_all_drives(int warningThreshold, int alertThreshold);
