@@ -127,9 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="check_rm_drive.cpp" />
     <ClCompile Include="disk_checker.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="network_checker.cpp" />
+    <ClCompile Include="service_checker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h" />
