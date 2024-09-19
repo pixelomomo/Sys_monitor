@@ -1,0 +1,1297 @@
+Nom de l'hôte : Mohmmad-Amin-PC
+Adresse IP : 192.168.1.72
+-------------------------------------
+[17-09-2024 15:02:13] Exécution du test : 001 (disk_space)
+[17-09-2024 15:02:13] Le lecteur C:\\ est utilisé à 94%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[17-09-2024 15:02:13] Exécution du test : 002 (network_adapter)
+[17-09-2024 15:02:13] Adaptateur réseau trouvé : {76275F89-5F9A-459B-8D44-95CCA86B0203}
+Description : Realtek Gaming GbE Family Controller
+Adresse IP : 192.168.1.72
+Statut : DHCP activé
+Adaptateur réseau trouvé : {C15A986D-3F67-49D5-AC9B-17B333D3CF4D}
+Description : Bluetooth Device (Personal Area Network)
+Adresse IP : 0.0.0.0
+Statut : DHCP activé
+
+[17-09-2024 15:02:13] Exécution du test : 003 (removable_drive)
+[17-09-2024 15:02:13] Lecteurs amovibles détectés :
+
+[17-09-2024 15:02:13] Exécution du test : 004 (services)
+[17-09-2024 15:02:13] Services en cours d'exécution :
+Service Name: AJRouter
+Display Name: Service de routeur AllJoyn
+State: Stopped
+-----------------------------------
+Service Name: ALG
+Display Name: Service de la passerelle de la couche Application
+State: Stopped
+-----------------------------------
+Service Name: AntiCheatExpert Service
+Display Name: AntiCheatExpert Service
+State: Stopped
+-----------------------------------
+Service Name: AppIDSvc
+Display Name: Identité de lapplication
+State: Stopped
+-----------------------------------
+Service Name: Appinfo
+Display Name: Informations dapplication
+State: Running
+-----------------------------------
+Service Name: AppMgmt
+Display Name: Gestion dapplications
+State: Stopped
+-----------------------------------
+Service Name: AppReadiness
+Display Name: Préparation des applications
+State: Stopped
+-----------------------------------
+Service Name: AppVClient
+Display Name: Microsoft App-V Client
+State: Stopped
+-----------------------------------
+Service Name: AppXSvc
+Display Name: Service de déploiement AppX (AppXSVC)
+State: Running
+-----------------------------------
+Service Name: AssignedAccessManagerSvc
+Display Name: Service AssignedAccessManager
+State: Stopped
+-----------------------------------
+Service Name: AudioEndpointBuilder
+Display Name: Générateur de points de terminaison du service Audio Windows
+State: Running
+-----------------------------------
+Service Name: Audiosrv
+Display Name: Audio Windows
+State: Running
+-----------------------------------
+Service Name: autotimesvc
+Display Name: Heure cellulaire
+State: Stopped
+-----------------------------------
+Service Name: AxInstSV
+Display Name: Programme dinstallation ActiveX (AxInstSV)
+State: Stopped
+-----------------------------------
+Service Name: AzureAttestService
+Display Name: AzureAttestService
+State: Running
+-----------------------------------
+Service Name: battlenet_helpersvc
+Display Name: Battle.net Update Helper Svc
+State: Stopped
+-----------------------------------
+Service Name: BDESVC
+Display Name: Service de chiffrement de lecteur BitLocker
+State: Stopped
+-----------------------------------
+Service Name: BEService
+Display Name: BattlEye Service
+State: Stopped
+-----------------------------------
+Service Name: BFE
+Display Name: Moteur de filtrage de base
+State: Running
+-----------------------------------
+Service Name: BITS
+Display Name: Service de transfert intelligent en arrière-plan
+State: Stopped
+-----------------------------------
+Service Name: Bonjour Service
+Display Name: Service Bonjour
+State: Running
+-----------------------------------
+Service Name: BrokerInfrastructure
+Display Name: Service dinfrastructure des tâches en arrière-plan
+State: Running
+-----------------------------------
+Service Name: BTAGService
+Display Name: Service de passerelle audio Bluetooth
+State: Running
+-----------------------------------
+Service Name: BthAvctpSvc
+Display Name: Service AVCTP
+State: Running
+-----------------------------------
+Service Name: bthserv
+Display Name: Service de prise en charge Bluetooth
+State: Running
+-----------------------------------
+Service Name: CamoService
+Display Name: Camo Helper Service
+State: Running
+-----------------------------------
+Service Name: camsvc
+Display Name: Service Gestionnaire daccès aux fonctionnalités
+State: Running
+-----------------------------------
+Service Name: CDPSvc
+Display Name: Service de plateforme des appareils connectés
+State: Running
+-----------------------------------
+Service Name: CertPropSvc
+Display Name: Propagation du certificat
+State: Stopped
+-----------------------------------
+Service Name: ClipSVC
+Display Name: Service de licences de client (ClipSVC)
+State: Stopped
+-----------------------------------
+Service Name: cloudidsvc
+Display Name: Service didentité de Microsoft Cloud
+State: Stopped
+-----------------------------------
+Service Name: COMSysApp
+Display Name: Application système COM+
+State: Stopped
+-----------------------------------
+Service Name: CoreMessagingRegistrar
+Display Name: CoreMessaging
+State: Running
+-----------------------------------
+Service Name: CryptSvc
+Display Name: Services de chiffrement
+State: Running
+-----------------------------------
+Service Name: CscService
+Display Name: Fichiers hors connexion
+State: Stopped
+-----------------------------------
+Service Name: DcomLaunch
+Display Name: Lanceur de processus serveur DCOM
+State: Running
+-----------------------------------
+Service Name: dcsvc
+Display Name: Service de configuration (DC) déclaré
+State: Stopped
+-----------------------------------
+Service Name: defragsvc
+Display Name: Optimiser les lecteurs
+State: Stopped
+-----------------------------------
+Service Name: DeviceAssociationService
+Display Name: Service dassociation de périphérique
+State: Running
+-----------------------------------
+Service Name: DeviceInstall
+Display Name: Service dinstallation de périphérique
+State: Running
+-----------------------------------
+Service Name: DevQueryBroker
+Display Name: Service Broker de découverte en arrière-plan DevQuery
+State: Stopped
+-----------------------------------
+Service Name: Dhcp
+Display Name: Client DHCP
+State: Running
+-----------------------------------
+Service Name: diagnosticshub.standardcollector.service
+Display Name: Service Collecteur standard du concentrateur de diagnostic Microsoft (R)
+State: Stopped
+-----------------------------------
+Service Name: diagsvc
+Display Name: Diagnostic Execution Service
+State: Stopped
+-----------------------------------
+Service Name: DiagTrack
+Display Name: Expériences des utilisateurs connectés et télémétrie
+State: Running
+-----------------------------------
+Service Name: DialogBlockingService
+Display Name: DialogBlockingService
+State: Stopped
+-----------------------------------
+Service Name: DispBrokerDesktopSvc
+Display Name: Service de stratégie d'affichage
+State: Running
+-----------------------------------
+Service Name: DisplayEnhancementService
+Display Name: Service d'amélioration de l'affichage
+State: Stopped
+-----------------------------------
+Service Name: DmEnrollmentSvc
+Display Name: Service d'inscription de la gestion des périphériques
+State: Stopped
+-----------------------------------
+Service Name: dmwappushservice
+Display Name: Service de routage de messages Push du protocole WAP (Wireless Application Protocol) de gestion des appareils
+State: Stopped
+-----------------------------------
+Service Name: Dnscache
+Display Name: Client DNS
+State: Running
+-----------------------------------
+Service Name: DoSvc
+Display Name: Optimisation de livraison
+State: Running
+-----------------------------------
+Service Name: dot3svc
+Display Name: Configuration automatique de réseau câblé
+State: Stopped
+-----------------------------------
+Service Name: DPS
+Display Name: Service de stratégie de diagnostic
+State: Running
+-----------------------------------
+Service Name: DriversCloudAgent
+Display Name: DriversCloud Agent
+State: Stopped
+-----------------------------------
+Service Name: DsmSvc
+Display Name: Gestionnaire dinstallation de périphérique
+State: Running
+-----------------------------------
+Service Name: DsSvc
+Display Name: Service de partage des données
+State: Stopped
+-----------------------------------
+Service Name: DusmSvc
+Display Name: Consommation des données
+State: Running
+-----------------------------------
+Service Name: EAAntiCheatService
+Display Name: EAAntiCheatService
+State: Stopped
+-----------------------------------
+Service Name: EABackgroundService
+Display Name: EABackgroundService
+State: Stopped
+-----------------------------------
+Service Name: EapHost
+Display Name: Protocole EAP (Extensible Authentication Protocol)
+State: Stopped
+-----------------------------------
+Service Name: EasyAntiCheat_EOS
+Display Name: Easy Anti-Cheat (Epic Online Services)
+State: Stopped
+-----------------------------------
+Service Name: edgeupdate
+Display Name: Microsoft Edge Update Service (edgeupdate)
+State: Stopped
+-----------------------------------
+Service Name: edgeupdatem
+Display Name: Microsoft Edge Update Service (edgeupdatem)
+State: Stopped
+-----------------------------------
+Service Name: EFS
+Display Name: Système de fichiers EFS (Encrypting File System)
+State: Stopped
+-----------------------------------
+Service Name: embeddedmode
+Display Name: Mode incorporé
+State: Stopped
+-----------------------------------
+Service Name: EntAppSvc
+Display Name: Service de gestion des applications d'entreprise
+State: Stopped
+-----------------------------------
+Service Name: EpicOnlineServices
+Display Name: Epic Online Services
+State: Stopped
+-----------------------------------
+Service Name: EventLog
+Display Name: Journal dévénements Windows
+State: Running
+-----------------------------------
+Service Name: EventSystem
+Display Name: Système dévénement COM+
+State: Running
+-----------------------------------
+Service Name: fdPHost
+Display Name: Hôte du fournisseur de découverte de fonctions
+State: Stopped
+-----------------------------------
+Service Name: FDResPub
+Display Name: Publication des ressources de découverte de fonctions
+State: Stopped
+-----------------------------------
+Service Name: fhsvc
+Display Name: Service dhistorique des fichiers
+State: Stopped
+-----------------------------------
+Service Name: FontCache
+Display Name: Service de cache de police Windows
+State: Running
+-----------------------------------
+Service Name: FontCache3.0.0.0
+Display Name: Cache de police de Windows Presentation Foundation 3.0.0.0
+State: Stopped
+-----------------------------------
+Service Name: FrameServer
+Display Name: Serveur de trame de la Caméra Windows
+State: Stopped
+-----------------------------------
+Service Name: FrameServerMonitor
+Display Name: Moniteur de serveur de trame Caméra Windows
+State: Running
+-----------------------------------
+Service Name: FvSvc
+Display Name: NVIDIA FrameView SDK service
+State: Stopped
+-----------------------------------
+Service Name: GalaxyClientService
+Display Name: GalaxyClientService
+State: Stopped
+-----------------------------------
+Service Name: GalaxyCommunication
+Display Name: GalaxyCommunication
+State: Stopped
+-----------------------------------
+Service Name: GameInput Service
+Display Name: GameInput Service
+State: Stopped
+-----------------------------------
+Service Name: GameInputSvc
+Display Name: GameInput Service
+State: Stopped
+-----------------------------------
+Service Name: GamingServices
+Display Name: Gaming Services
+State: Running
+-----------------------------------
+Service Name: GamingServicesNet
+Display Name: Gaming Services
+State: Running
+-----------------------------------
+Service Name: GoogleChromeElevationService
+Display Name: Google Chrome Elevation Service (GoogleChromeElevationService)
+State: Stopped
+-----------------------------------
+Service Name: GoogleUpdaterInternalService130.0.6679.0
+Display Name: GoogleUpdater InternalService 130.0.6679.0 (GoogleUpdaterInternalService130.0.6679.0)
+State: Stopped
+-----------------------------------
+Service Name: GoogleUpdaterService130.0.6679.0
+Display Name: GoogleUpdater Service 130.0.6679.0 (GoogleUpdaterService130.0.6679.0)
+State: Stopped
+-----------------------------------
+Service Name: gpsvc
+Display Name: Client de stratégie de groupe
+State: Stopped
+-----------------------------------
+Service Name: GraphicsPerfSvc
+Display Name: GraphicsPerfSvc
+State: Stopped
+-----------------------------------
+Service Name: gupdate
+Display Name: Service Google Update (gupdate)
+State: Stopped
+-----------------------------------
+Service Name: gupdatem
+Display Name: Service Google Update (gupdatem)
+State: Stopped
+-----------------------------------
+Service Name: hidserv
+Display Name: Service du périphérique dinterface utilisateur
+State: Running
+-----------------------------------
+Service Name: HvHost
+Display Name: Service d'hôte HV
+State: Stopped
+-----------------------------------
+Service Name: icssvc
+Display Name: Service Point d'accès sans fil mobile Windows
+State: Stopped
+-----------------------------------
+Service Name: IKEEXT
+Display Name: Modules de génération de clés IKE et AuthIP
+State: Stopped
+-----------------------------------
+Service Name: InstallService
+Display Name: Installation du service Microsoft Store
+State: Running
+-----------------------------------
+Service Name: InventorySvc
+Display Name: Service dAppraisal inventaire et compatibilité
+State: Stopped
+-----------------------------------
+Service Name: iphlpsvc
+Display Name: Assistance IP
+State: Running
+-----------------------------------
+Service Name: IpxlatCfgSvc
+Display Name: Service de configuration de conversion IP
+State: Stopped
+-----------------------------------
+Service Name: JetBrainsEtwHost.16
+Display Name: JetBrains ETW Host Service v16.42.0 (x64)
+State: Running
+-----------------------------------
+Service Name: KeyIso
+Display Name: Isolation de clé CNG
+State: Running
+-----------------------------------
+Service Name: KtmRm
+Display Name: Service KtmRm pour Distributed Transaction Coordinator
+State: Stopped
+-----------------------------------
+Service Name: LanmanServer
+Display Name: Serveur
+State: Running
+-----------------------------------
+Service Name: LanmanWorkstation
+Display Name: Station de travail
+State: Running
+-----------------------------------
+Service Name: LetsViewService
+Display Name: LetsViewService
+State: Running
+-----------------------------------
+Service Name: lfsvc
+Display Name: Service de géolocalisation
+State: Running
+-----------------------------------
+Service Name: LGHUBUpdaterService
+Display Name: LGHUB Updater Service
+State: Running
+-----------------------------------
+Service Name: LicenseManager
+Display Name: Serveur Gestionnaire de licences Windows
+State: Running
+-----------------------------------
+Service Name: lltdsvc
+Display Name: Mappage de découverte de topologie de la couche de liaison
+State: Stopped
+-----------------------------------
+Service Name: lmhosts
+Display Name: Assistance NetBIOS sur TCP/IP
+State: Running
+-----------------------------------
+Service Name: logi_lamparray_service
+Display Name: Logitech LampArray Service
+State: Running
+-----------------------------------
+Service Name: LSM
+Display Name: Gestionnaire de session locale
+State: Running
+-----------------------------------
+Service Name: LxpSvc
+Display Name: Service d'expérience linguistique
+State: Stopped
+-----------------------------------
+Service Name: MapsBroker
+Display Name: Gestionnaire des cartes téléchargées
+State: Stopped
+-----------------------------------
+Service Name: McpManagementService
+Display Name: McpManagementService
+State: Stopped
+-----------------------------------
+Service Name: MDCoreSvc
+Display Name: Microsoft Defender Service de base
+State: Running
+-----------------------------------
+Service Name: MicrosoftEdgeElevationService
+Display Name: Microsoft Edge Elevation Service (MicrosoftEdgeElevationService)
+State: Stopped
+-----------------------------------
+Service Name: MixedRealityOpenXRSvc
+Display Name: Service Windows Mixed Reality OpenXR
+State: Stopped
+-----------------------------------
+Service Name: mpssvc
+Display Name: Pare-feu Windows Defender
+State: Running
+-----------------------------------
+Service Name: MSDTC
+Display Name: Coordinateur de transactions distribuées
+State: Stopped
+-----------------------------------
+Service Name: MSiSCSI
+Display Name: Service Initiateur iSCSI de Microsoft
+State: Stopped
+-----------------------------------
+Service Name: msiserver
+Display Name: Windows Installer
+State: Stopped
+-----------------------------------
+Service Name: MsKeyboardFilter
+Display Name: Filtre clavier Microsoft
+State: Stopped
+-----------------------------------
+Service Name: MSSQLSERVER
+Display Name: SQL Server (MSSQLSERVER)
+State: Running
+-----------------------------------
+Service Name: MySQL80
+Display Name: MySQL80
+State: Running
+-----------------------------------
+Service Name: NaturalAuthentication
+Display Name: Authentification naturelle
+State: Stopped
+-----------------------------------
+Service Name: NcaSvc
+Display Name: Assistant Connectivité réseau
+State: Stopped
+-----------------------------------
+Service Name: NcbService
+Display Name: Service Broker pour les connexions réseau
+State: Running
+-----------------------------------
+Service Name: NcdAutoSetup
+Display Name: Configuration automatique des périphériques connectés au réseau
+State: Stopped
+-----------------------------------
+Service Name: Netlogon
+Display Name: Netlogon
+State: Stopped
+-----------------------------------
+Service Name: Netman
+Display Name: Connexions réseau
+State: Running
+-----------------------------------
+Service Name: netprofm
+Display Name: Service Liste des réseaux
+State: Running
+-----------------------------------
+Service Name: NetSetupSvc
+Display Name: Service Configuration du réseau
+State: Stopped
+-----------------------------------
+Service Name: NetTcpPortSharing
+Display Name: Service de partage de ports Net.Tcp
+State: Stopped
+-----------------------------------
+Service Name: NgcCtnrSvc
+Display Name: Conteneur Microsoft Passport
+State: Running
+-----------------------------------
+Service Name: NgcSvc
+Display Name: Microsoft Passport
+State: Running
+-----------------------------------
+Service Name: NlaSvc
+Display Name: Connaissance des emplacements réseau
+State: Stopped
+-----------------------------------
+Service Name: nsi
+Display Name: Service Interface du magasin réseau
+State: Running
+-----------------------------------
+Service Name: NvBroadcast.ContainerLocalSystem
+Display Name: NVIDIA Broadcast LocalSystem Container
+State: Running
+-----------------------------------
+Service Name: NvContainerLocalSystem
+Display Name: NVIDIA LocalSystem Container
+State: Running
+-----------------------------------
+Service Name: NVDisplay.ContainerLocalSystem
+Display Name: NVIDIA Display Container LS
+State: Running
+-----------------------------------
+Service Name: OverwolfUpdater
+Display Name: Overwolf Updater Windows SCM
+State: Stopped
+-----------------------------------
+Service Name: p2pimsvc
+Display Name: Identity Manager réseau homologue
+State: Stopped
+-----------------------------------
+Service Name: p2psvc
+Display Name: Groupement de mise en réseau de pairs
+State: Stopped
+-----------------------------------
+Service Name: Parsec
+Display Name: Parsec
+State: Running
+-----------------------------------
+Service Name: PcaSvc
+Display Name: Service de lAssistant Compatibilité des programmes
+State: Running
+-----------------------------------
+Service Name: PeerDistSvc
+Display Name: BranchCache
+State: Stopped
+-----------------------------------
+Service Name: perceptionsimulation
+Display Name: Service de simulation de perception Windows
+State: Stopped
+-----------------------------------
+Service Name: PerfHost
+Display Name: Hôte de DLL de compteur de performance
+State: Stopped
+-----------------------------------
+Service Name: PhoneSvc
+Display Name: Service téléphonique
+State: Running
+-----------------------------------
+Service Name: pla
+Display Name: Journaux & alertes de performance
+State: Stopped
+-----------------------------------
+Service Name: PlugPlay
+Display Name: Plug-and-Play
+State: Running
+-----------------------------------
+Service Name: PNRPAutoReg
+Display Name: Service de publication des noms dordinateurs PNRP
+State: Stopped
+-----------------------------------
+Service Name: PNRPsvc
+Display Name: Protocole PNRP
+State: Stopped
+-----------------------------------
+Service Name: PolicyAgent
+Display Name: Agent de stratégie IPsec
+State: Running
+-----------------------------------
+Service Name: Power
+Display Name: Alimentation
+State: Running
+-----------------------------------
+Service Name: PrintNotify
+Display Name: Extensions et notifications dimprimante
+State: Stopped
+-----------------------------------
+Service Name: ProfSvc
+Display Name: Service de profil utilisateur
+State: Running
+-----------------------------------
+Service Name: PushToInstall
+Display Name: Service PushToInstall de Windows
+State: Stopped
+-----------------------------------
+Service Name: QWAVE
+Display Name: Expérience audio-vidéo haute qualité Windows
+State: Stopped
+-----------------------------------
+Service Name: RasAuto
+Display Name: Gestionnaire des connexions automatiques daccès à distance
+State: Stopped
+-----------------------------------
+Service Name: RasMan
+Display Name: Gestionnaire des connexions daccès à distance
+State: Running
+-----------------------------------
+Service Name: Razer Chroma SDK Server
+Display Name: Razer Chroma SDK Server
+State: Running
+-----------------------------------
+Service Name: Razer Chroma SDK Service
+Display Name: Razer Chroma SDK Service
+State: Running
+-----------------------------------
+Service Name: Razer Chroma Stream Server
+Display Name: Razer Chroma Stream Server
+State: Running
+-----------------------------------
+Service Name: Razer Game Manager Service
+Display Name: Razer Game Manager
+State: Running
+-----------------------------------
+Service Name: Razer Synapse Service
+Display Name: Razer Synapse Service
+State: Running
+-----------------------------------
+Service Name: RemoteAccess
+Display Name: Routage et accès distant
+State: Stopped
+-----------------------------------
+Service Name: RemoteRegistry
+Display Name: Registre à distance
+State: Stopped
+-----------------------------------
+Service Name: RetailDemo
+Display Name: Service de démo du magasin
+State: Stopped
+-----------------------------------
+Service Name: RmSvc
+Display Name: Service de gestion radio
+State: Running
+-----------------------------------
+Service Name: Rockstar Service
+Display Name: Rockstar Game Library Service
+State: Stopped
+-----------------------------------
+Service Name: RpcEptMapper
+Display Name: Mappeur de point de terminaison RPC
+State: Running
+-----------------------------------
+Service Name: RpcLocator
+Display Name: Localisateur dappels de procédure distante (RPC)
+State: Stopped
+-----------------------------------
+Service Name: RpcSs
+Display Name: Appel de procédure distante (RPC)
+State: Running
+-----------------------------------
+Service Name: RtkBtManServ
+Display Name: Realtek Bluetooth Device Manager Service
+State: Running
+-----------------------------------
+Service Name: RzActionSvc
+Display Name: Razer Central Service
+State: Running
+-----------------------------------
+Service Name: SamSs
+Display Name: Gestionnaire de comptes de sécurité
+State: Running
+-----------------------------------
+Service Name: SCardSvr
+Display Name: Carte à puce
+State: Stopped
+-----------------------------------
+Service Name: ScDeviceEnum
+Display Name: Service dénumération de périphériques de carte à puce
+State: Stopped
+-----------------------------------
+Service Name: Schedule
+Display Name: Planificateur de tâches
+State: Running
+-----------------------------------
+Service Name: SCPolicySvc
+Display Name: Stratégie de retrait de la carte à puce
+State: Stopped
+-----------------------------------
+Service Name: SDRSVC
+Display Name: Sauvegarde Windows
+State: Stopped
+-----------------------------------
+Service Name: seclogon
+Display Name: Ouverture de session secondaire
+State: Running
+-----------------------------------
+Service Name: SecurityHealthService
+Display Name: Service Sécurité Windows
+State: Stopped
+-----------------------------------
+Service Name: SEMgrSvc
+Display Name: Gestionnaires des paiements et des éléments sécurisés NFC
+State: Stopped
+-----------------------------------
+Service Name: SENS
+Display Name: Service de notification dévénements système
+State: Running
+-----------------------------------
+Service Name: Sense
+Display Name: Service Protection avancée contre les menaces Windows Defender
+State: Stopped
+-----------------------------------
+Service Name: SensorDataService
+Display Name: Service Données de capteur
+State: Stopped
+-----------------------------------
+Service Name: SensorService
+Display Name: Service de capteur
+State: Stopped
+-----------------------------------
+Service Name: SensrSvc
+Display Name: Service de surveillance des capteurs
+State: Stopped
+-----------------------------------
+Service Name: SessionEnv
+Display Name: Configuration des services Bureau à distance
+State: Stopped
+-----------------------------------
+Service Name: SgrmBroker
+Display Name: Service Broker du moniteur d'exécution System Guard
+State: Stopped
+-----------------------------------
+Service Name: SharedAccess
+Display Name: Partage de connexion Internet (ICS)
+State: Stopped
+-----------------------------------
+Service Name: SharedRealitySvc
+Display Name: Service de données spatiales
+State: Stopped
+-----------------------------------
+Service Name: ShellHWDetection
+Display Name: Détection matériel noyau
+State: Running
+-----------------------------------
+Service Name: shpamsvc
+Display Name: Shared PC Account Manager
+State: Stopped
+-----------------------------------
+Service Name: smphost
+Display Name: SMP de lEspace de stockages Microsoft
+State: Stopped
+-----------------------------------
+Service Name: SmsRouter
+Display Name: Service Routeur SMS Microsoft Windows.
+State: Stopped
+-----------------------------------
+Service Name: SNMPTrap
+Display Name: Interruption SNMP
+State: Stopped
+-----------------------------------
+Service Name: spectrum
+Display Name: Service de perception Windows
+State: Stopped
+-----------------------------------
+Service Name: Spooler
+Display Name: Spouleur dimpression
+State: Running
+-----------------------------------
+Service Name: sppsvc
+Display Name: Protection logicielle
+State: Stopped
+-----------------------------------
+Service Name: SQLBrowser
+Display Name: SQL Server Browser
+State: Stopped
+-----------------------------------
+Service Name: SQLSERVERAGENT
+Display Name: SQL Server Agent (MSSQLSERVER)
+State: Stopped
+-----------------------------------
+Service Name: SQLTELEMETRY
+Display Name: SQL Server CEIP service (MSSQLSERVER)
+State: Running
+-----------------------------------
+Service Name: SQLWriter
+Display Name: Enregistreur VSS SQL Server
+State: Running
+-----------------------------------
+Service Name: SSDPSRV
+Display Name: Découverte SSDP
+State: Running
+-----------------------------------
+Service Name: ssh-agent
+Display Name: OpenSSH Authentication Agent
+State: Stopped
+-----------------------------------
+Service Name: SstpSvc
+Display Name: Service SSTP (Secure Socket Tunneling Protocol)
+State: Running
+-----------------------------------
+Service Name: StateRepository
+Display Name: Service State Repository (StateRepository)
+State: Running
+-----------------------------------
+Service Name: Steam Client Service
+Display Name: Steam Client Service
+State: Running
+-----------------------------------
+Service Name: StiSvc
+Display Name: Acquisition dimage Windows (WIA)
+State: Running
+-----------------------------------
+Service Name: StorSvc
+Display Name: Service de stockage
+State: Running
+-----------------------------------
+Service Name: svsvc
+Display Name: Vérificateur de points
+State: Stopped
+-----------------------------------
+Service Name: swprv
+Display Name: Fournisseur de cliché instantané de logiciel Microsoft
+State: Stopped
+-----------------------------------
+Service Name: SysMain
+Display Name: SysMain
+State: Running
+-----------------------------------
+Service Name: SystemEventsBroker
+Display Name: Service Broker des événements système
+State: Running
+-----------------------------------
+Service Name: TapiSrv
+Display Name: Téléphonie
+State: Stopped
+-----------------------------------
+Service Name: TermService
+Display Name: Services Bureau à distance
+State: Stopped
+-----------------------------------
+Service Name: TextInputManagementService
+Display Name: Service de gestion des entrées de texte
+State: Running
+-----------------------------------
+Service Name: Themes
+Display Name: Thèmes
+State: Running
+-----------------------------------
+Service Name: TieringEngineService
+Display Name: Gestion des niveaux de stockage
+State: Stopped
+-----------------------------------
+Service Name: TimeBrokerSvc
+Display Name: Service Broker pour les événements horaires
+State: Running
+-----------------------------------
+Service Name: TokenBroker
+Display Name: Gestionnaire de comptes web
+State: Running
+-----------------------------------
+Service Name: TrkWks
+Display Name: Client de suivi de lien distribué
+State: Running
+-----------------------------------
+Service Name: TroubleshootingSvc
+Display Name: Service de résolution des problèmes recommandé
+State: Stopped
+-----------------------------------
+Service Name: TrustedInstaller
+Display Name: Programme dinstallation pour les modules Windows
+State: Stopped
+-----------------------------------
+Service Name: tzautoupdate
+Display Name: Programme de mise à jour automatique du fuseau horaire
+State: Stopped
+-----------------------------------
+Service Name: UevAgentService
+Display Name: Service User Experience Virtualization
+State: Stopped
+-----------------------------------
+Service Name: uhssvc
+Display Name: Microsoft Update Health Service
+State: Stopped
+-----------------------------------
+Service Name: UmRdpService
+Display Name: Redirecteur de port du mode utilisateur des services Bureau à distance
+State: Stopped
+-----------------------------------
+Service Name: Updater
+Display Name: Updater
+State: Stopped
+-----------------------------------
+Service Name: upnphost
+Display Name: Hôte de périphérique UPnP
+State: Stopped
+-----------------------------------
+Service Name: UserManager
+Display Name: Gestionnaire des utilisateurs
+State: Running
+-----------------------------------
+Service Name: UsoSvc
+Display Name: Service Orchestrator pour les mises à jour
+State: Running
+-----------------------------------
+Service Name: VacSvc
+Display Name: Service de composition audio volumétrique
+State: Stopped
+-----------------------------------
+Service Name: VaultSvc
+Display Name: Gestionnaire dinformations didentification
+State: Running
+-----------------------------------
+Service Name: vds
+Display Name: Disque virtuel
+State: Stopped
+-----------------------------------
+Service Name: vgc
+Display Name: vgc
+State: Stopped
+-----------------------------------
+Service Name: VirtualDesktop.Service.exe
+Display Name: Virtual Desktop Service
+State: Running
+-----------------------------------
+Service Name: vmicguestinterface
+Display Name: Interface de services dinvité Hyper-V
+State: Stopped
+-----------------------------------
+Service Name: vmicheartbeat
+Display Name: Service Pulsation Microsoft Hyper-V
+State: Stopped
+-----------------------------------
+Service Name: vmickvpexchange
+Display Name: Service Échange de données Microsoft Hyper-V
+State: Stopped
+-----------------------------------
+Service Name: vmicrdv
+Display Name: Service de virtualisation Bureau à distance Hyper-V
+State: Stopped
+-----------------------------------
+Service Name: vmicshutdown
+Display Name: Service Arrêt de linvité Microsoft Hyper-V
+State: Stopped
+-----------------------------------
+Service Name: vmictimesync
+Display Name: Service Synchronisation date/heure Microsoft Hyper-V
+State: Stopped
+-----------------------------------
+Service Name: vmicvmsession
+Display Name: Service Hyper-V PowerShell Direct
+State: Stopped
+-----------------------------------
+Service Name: vmicvss
+Display Name: Requête du service VSS Hyper-V
+State: Stopped
+-----------------------------------
+Service Name: VSInstallerElevationService
+Display Name: Visual Studio Installer Elevation Service
+State: Stopped
+-----------------------------------
+Service Name: VSS
+Display Name: Cliché instantané des volumes
+State: Stopped
+-----------------------------------
+Service Name: VSStandardCollectorService150
+Display Name: Visual Studio Standard Collector Service 150
+State: Running
+-----------------------------------
+Service Name: W32Time
+Display Name: Temps Windows
+State: Running
+-----------------------------------
+Service Name: WaaSMedicSvc
+Display Name: WaaSMedicSvc
+State: Stopped
+-----------------------------------
+Service Name: WalletService
+Display Name: WalletService
+State: Stopped
+-----------------------------------
+Service Name: WarpJITSvc
+Display Name: Warp JIT Service
+State: Stopped
+-----------------------------------
+Service Name: wbengine
+Display Name: Service de moteur de sauvegarde en mode bloc
+State: Stopped
+-----------------------------------
+Service Name: WbioSrvc
+Display Name: Service de biométrie Windows
+State: Stopped
+-----------------------------------
+Service Name: Wcmsvc
+Display Name: Gestionnaire des connexions Windows
+State: Running
+-----------------------------------
+Service Name: wcncsvc
+Display Name: Windows Connect Now - Registre de configuration
+State: Stopped
+-----------------------------------
+Service Name: WdiServiceHost
+Display Name: Service hôte WDIServiceHost
+State: Stopped
+-----------------------------------
+Service Name: WdiSystemHost
+Display Name: Hôte système de diagnostics
+State: Running
+-----------------------------------
+Service Name: WdNisSvc
+Display Name: Service dinspection réseau de lantivirus Microsoft Defender
+State: Running
+-----------------------------------
+Service Name: WebClient
+Display Name: WebClient
+State: Stopped
+-----------------------------------
+Service Name: webthreatdefsvc
+Display Name: Service Web Threat Defense
+State: Stopped
+-----------------------------------
+Service Name: Wecsvc
+Display Name: Collecteur dévénements de Windows
+State: Stopped
+-----------------------------------
+Service Name: WEPHOSTSVC
+Display Name: Service hôte du fournisseur de chiffrement Windows
+State: Stopped
+-----------------------------------
+Service Name: wercplsupport
+Display Name: Prise en charge du Panneau de configuration Rapports de problèmes
+State: Stopped
+-----------------------------------
+Service Name: WerSvc
+Display Name: Service de rapport derreurs Windows
+State: Stopped
+-----------------------------------
+Service Name: WFDSConMgrSvc
+Display Name: Service Wi-Fi Direct Service de gestionnaire de connexions
+State: Stopped
+-----------------------------------
+Service Name: WiaRpc
+Display Name: Événements dacquisition dimages fixes
+State: Stopped
+-----------------------------------
+Service Name: WinDefend
+Display Name: Service antivirus Microsoft Defender
+State: Running
+-----------------------------------
+Service Name: WinHttpAutoProxySvc
+Display Name: Service de découverte automatique de Proxy Web pour les services HTTP Windows
+State: Running
+-----------------------------------
+Service Name: Winmgmt
+Display Name: Infrastructure de gestion Windows
+State: Running
+-----------------------------------
+Service Name: WinRM
+Display Name: Gestion à distance de Windows (Gestion WSM)
+State: Stopped
+-----------------------------------
+Service Name: wisvc
+Display Name: Service Windows Insider
+State: Stopped
+-----------------------------------
+Service Name: WlanSvc
+Display Name: Service de configuration automatique WLAN
+State: Stopped
+-----------------------------------
+Service Name: wlidsvc
+Display Name: Assistant Connexion avec un compte Microsoft
+State: Stopped
+-----------------------------------
+Service Name: wlpasvc
+Display Name: Service de lAssistant de profil local
+State: Stopped
+-----------------------------------
+Service Name: WManSvc
+Display Name: Service de gestion de Windows
+State: Stopped
+-----------------------------------
+Service Name: wmiApSrv
+Display Name: Carte de performance WMI
+State: Stopped
+-----------------------------------
+Service Name: WMPNetworkSvc
+Display Name: Service de partage réseau du Lecteur multimédia Windows
+State: Stopped
+-----------------------------------
+Service Name: workfolderssvc
+Display Name: Dossiers de travail
+State: Stopped
+-----------------------------------
+Service Name: WpcMonSvc
+Display Name: Contrôle parental
+State: Stopped
+-----------------------------------
+Service Name: WPDBusEnum
+Display Name: Service Énumérateur dappareil mobile
+State: Stopped
+-----------------------------------
+Service Name: WpnService
+Display Name: Service du système de notifications Push Windows
+State: Running
+-----------------------------------
+Service Name: wscsvc
+Display Name: Centre de sécurité
+State: Running
+-----------------------------------
+Service Name: WSearch
+Display Name: Windows Search
+State: Running
+-----------------------------------
+Service Name: wuauserv
+Display Name: Windows Update
+State: Stopped
+-----------------------------------
+Service Name: WwanSvc
+Display Name: Service de configuration automatique WWAN
+State: Stopped
+-----------------------------------
+Service Name: XblAuthManager
+Display Name: Gestionnaire d'authentification Xbox Live
+State: Stopped
+-----------------------------------
+Service Name: XblGameSave
+Display Name: Jeu sauvegardé sur Xbox Live
+State: Stopped
+-----------------------------------
+Service Name: XboxGipSvc
+Display Name: Xbox Accessory Management Service
+State: Stopped
+-----------------------------------
+Service Name: XboxNetApiSvc
+Display Name: Service de mise en réseau Xbox Live
+State: Stopped
+-----------------------------------
+Service Name: GigabyteUpdateService
+Display Name: GIGABYTE Update Service
+State: Running
+-----------------------------------
+Service Name: AarSvc_609da
+Display Name: AarSvc_609da
+State: Stopped
+-----------------------------------
+Service Name: BcastDVRUserService_609da
+Display Name: BcastDVRUserService_609da
+State: Stopped
+-----------------------------------
+Service Name: BluetoothUserService_609da
+Display Name: BluetoothUserService_609da
+State: Running
+-----------------------------------
+Service Name: CaptureService_609da
+Display Name: CaptureService_609da
+State: Stopped
+-----------------------------------
+Service Name: cbdhsvc_609da
+Display Name: cbdhsvc_609da
+State: Running
+-----------------------------------
+Service Name: CDPUserSvc_609da
+Display Name: CDPUserSvc_609da
+State: Running
+-----------------------------------
+Service Name: CloudBackupRestoreSvc_609da
+Display Name: CloudBackupRestoreSvc_609da
+State: Stopped
+-----------------------------------
+Service Name: ConsentUxUserSvc_609da
+Display Name: ConsentUxUserSvc_609da
+State: Stopped
+-----------------------------------
+Service Name: CredentialEnrollmentManagerUserSvc_609da
+Display Name: CredentialEnrollmentManagerUserSvc_609da
+State: Stopped
+-----------------------------------
+Service Name: DeviceAssociationBrokerSvc_609da
+Display Name: DeviceAssociationBrokerSvc_609da
+State: Stopped
+-----------------------------------
+Service Name: DevicePickerUserSvc_609da
+Display Name: DevicePickerUserSvc_609da
+State: Stopped
+-----------------------------------
+Service Name: DevicesFlowUserSvc_609da
+Display Name: DevicesFlowUserSvc_609da
+State: Running
+-----------------------------------
+Service Name: MessagingService_609da
+Display Name: MessagingService_609da
+State: Stopped
+-----------------------------------
+Service Name: NPSMSvc_609da
+Display Name: NPSMSvc_609da
+State: Running
+-----------------------------------
+Service Name: OneSyncSvc_609da
+Display Name: OneSyncSvc_609da
+State: Running
+-----------------------------------
+Service Name: P9RdrService_609da
+Display Name: P9RdrService_609da
+State: Stopped
+-----------------------------------
+Service Name: PenService_609da
+Display Name: PenService_609da
+State: Stopped
+-----------------------------------
+Service Name: PimIndexMaintenanceSvc_609da
+Display Name: PimIndexMaintenanceSvc_609da
+State: Stopped
+-----------------------------------
+Service Name: PrintWorkflowUserSvc_609da
+Display Name: PrintWorkflowUserSvc_609da
+State: Stopped
+-----------------------------------
+Service Name: UdkUserSvc_609da
+Display Name: UdkUserSvc_609da
+State: Running
+-----------------------------------
+Service Name: UnistoreSvc_609da
+Display Name: UnistoreSvc_609da
+State: Stopped
+-----------------------------------
+Service Name: UserDataSvc_609da
+Display Name: UserDataSvc_609da
+State: Stopped
+-----------------------------------
+Service Name: webthreatdefusersvc_609da
+Display Name: webthreatdefusersvc_609da
+State: Running
+-----------------------------------
+Service Name: WpnUserService_609da
+Display Name: WpnUserService_609da
+State: Running
+-----------------------------------
+
