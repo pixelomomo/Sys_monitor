@@ -1,4 +1,4 @@
-001;disk_space;Monitor Disk Space;warning;C:\\,80,95
-002;network_adapter;Check Network Adapter;info;
-003;removable_drive;Scan Removable Drive;alert;USB
-004;services;Check Running Services;warning;
+1;disk_space;Monitor Disk Space;warning;C:\\,80,95
+2;network_adapter;Check Network Adapter;info;
+3;removable_drive;Scan Removable Drive;alert;USB
+4;services;Check Running Services;warning;

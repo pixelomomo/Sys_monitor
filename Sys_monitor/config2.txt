@@ -1,0 +1,4 @@
+1;disk checker;Checks for porcentage used in disk and display an alert type accordingly;C:\;75
+1;disk checker;Checks for porcentage used in disk and display an alert type accordingly;D:\;50
+4;check services;Checks and display every running Windows services;warning;
+3;removable drive;Checks and display removable drives;USB;

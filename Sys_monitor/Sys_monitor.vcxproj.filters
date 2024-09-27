@@ -58,5 +58,8 @@
     <Text Include="system_monitor_log.txt">
       <Filter>Fichiers sources</Filter>
     </Text>
+    <Text Include="config2.txt">
+      <Filter>Fichiers sources</Filter>
+    </Text>
   </ItemGroup>
 </Project>

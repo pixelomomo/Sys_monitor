@@ -18,6 +18,19 @@
 #include <map>
 #include <functional>
 #include <ctime>
+#include <Wt/WApplication.h>
+#include <Wt/WBreak.h>
+#include <Wt/WAny.h>
+#include <Wt/WContainerWidget.h>
+#include <Wt/WComboBox.h>
+#include <Wt/WFileUpload.h>
+#include <Wt/WPopupMenu.h>
+#include <Wt/WSplitButton.h>
+#include <Wt/WStringListModel.h>
+#include <Wt/WProgressBar.h>
+#include <Wt/WLineEdit.h>
+#include <Wt/WPushButton.h>
+#include <Wt/WText.h>
 
 using namespace std;
 
@@ -32,13 +45,13 @@ struct ConfigEntry {
 // Déclaration de la fonction
 std::vector<ConfigEntry> readConfigFile(const std::string& filePath);
 
-void read_file(int& warningThreshold, int& alertThreshold);
-void disk_free_space(const wchar_t* driveLetter, int warningThreshold, int alertThreshold, const std::string& logFileName);
-void find_and_display_all_drives(int warningThreshold, int alertThreshold, const std::string& logFileName);
+void read_file(int& warningThreshold);
+void disk_free_space(const wchar_t* driveLetter, int warningThreshold, const std::string& logFileName);
+void find_and_display_all_drives(int warningThreshold, const std::string& logFileName);
 int network_checker(const std::string& adapterName, const std::string& logFileName);
 void list_removable_drives(const std::string& logFileName);
 void ListRunningServices(const std::string& logFileName);
-void executeTest(const std::string& testID, const std::string& params, int warningThreshold, int alertThreshold, const std::string& logFileName);
+void executeTest(const std::string& testID, const std::string& params, int warningThreshold, const std::string& logFileName);
 void logToFile(const std::string& message, const std::string& fileName);
 std::string wcharToString(const wchar_t* wcharStr);
 void logMachineInfo(const std::string& logFileName);

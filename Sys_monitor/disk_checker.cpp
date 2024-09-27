@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void read_file(int& warningThreshold, int& alertThreshold)
+void read_file(int& warningThreshold)
 {
     ifstream configFile("configdisk.txt");
     string line;
@@ -17,9 +17,6 @@ void read_file(int& warningThreshold, int& alertThreshold)
             if (key == "Diskspacewarning") {
                 warningThreshold = value;
             }
-            else if (key == "Diskspacealert") {
-                alertThreshold = value;
-            }
         }
         configFile.close();
     }
@@ -29,7 +26,7 @@ void read_file(int& warningThreshold, int& alertThreshold)
     }
 }
 
-void disk_free_space(const wchar_t* driveLetter, int warningThreshold, int alertThreshold, const std::string& logFileName) {
+void disk_free_space(const wchar_t* driveLetter, int warningThreshold, const std::string& logFileName) {
     ULARGE_INTEGER freeBytesAvailable, totalNumberOfBytes, totalNumberOfFreeBytes;
 
     // Utilisation de GetDiskFreeSpaceEx pour obtenir les informations d'espace disque
@@ -43,11 +40,8 @@ void disk_free_space(const wchar_t* driveLetter, int warningThreshold, int alert
         std::stringstream logMessage;
         logMessage << "Le lecteur " << driveLetterStr << " est utilisé à " << usedPercentage << "%.";
 
-        // Vérification des seuils d'alerte et d'avertissement
-        if (usedPercentage >= alertThreshold) {
-            logMessage << " ALERTE: Seuil d'alerte atteint (" << alertThreshold << "%).";
-        }
-        else if (usedPercentage >= warningThreshold) {
+        // Vérification du seuil d'avertissement
+        if (usedPercentage >= warningThreshold) {
             logMessage << " AVERTISSEMENT: Seuil d'avertissement atteint (" << warningThreshold << "%).";
         }
 
@@ -65,7 +59,7 @@ void disk_free_space(const wchar_t* driveLetter, int warningThreshold, int alert
     }
 }
 
-void find_and_display_all_drives(int warningThreshold, int alertThreshold, const std::string& logFileName) {
+void find_and_display_all_drives(int warningThreshold, const std::string& logFileName) {
     char driveStrings[256];
     DWORD length = GetLogicalDriveStringsA(sizeof(driveStrings), driveStrings);
 
@@ -81,6 +75,6 @@ void find_and_display_all_drives(int warningThreshold, int alertThreshold, const
         mbstowcs_s(&convertedChars, wDrive, drive, 4);  // Utilisation sécurisée
 
         // Appel de la fonction avec le lecteur converti
-        disk_free_space(wDrive, warningThreshold, alertThreshold, logFileName);
+        disk_free_space(wDrive, warningThreshold, logFileName);
     }
 }
