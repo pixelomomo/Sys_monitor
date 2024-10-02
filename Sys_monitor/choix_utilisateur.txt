@@ -1,2 +1,2 @@
 Choix 1 : Option 2 paramètre : Paramètre 2B
-Choix 2 : c paramètre : Paramètre c2
+Choix 2 : b paramètre : Paramètre b2

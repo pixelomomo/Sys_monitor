@@ -70,7 +70,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LibraryPath>C:\Wt 4.10.4 msvs2022 x64\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -119,15 +121,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>HPDF_DLL;WIN32;STATIC_CONCPP;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Program Files\Wt 4.10.4 msvs2022 x64\include;C:\Program Files\MySQL\MySQL Connector C++ 9.0\include\jdbc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files\MySQL\mysql-9.0.1-winx64\include;C:\boost_1_86_0\boost;C:\Wt 4.10.4 msvs2022 x64\include;C:\Program Files\MySQL\MySQL Connector C++ 9.0\include\jdbc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Program Files\Wt 4.10.4 msvs2022 x64\lib;C:\Program Files\MySQL\MySQL Connector C++ 9.0\lib64\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>wt.lib;wthttp.lib;wtdbo.lib;mysqlcppconn-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files\MySQL\mysql-9.0.1-winx64\lib;C:\boost_1_86_0\lib64-msvc-14.3;C:\boost_1_86_0\libs;C:\Wt 4.10.4 msvs2022 x64\lib;C:\Program Files\MySQL\MySQL Connector C++ 9.0\lib64\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>wtdbomysql.lib;mysqlclient.lib;libmysql.lib;boost_system-vc143-mt-x64-1_86.lib;boost_filesystem-vc143-mt-x64-1_86.lib;wt.lib;wthttp.lib;libmysql.lib;wtdbo.lib;mysqlcppconn-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>

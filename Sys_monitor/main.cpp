@@ -127,9 +127,10 @@ public:
         Wt::WComboBox* comboBox1 = container->addWidget(std::make_unique<Wt::WComboBox>());
 
         // Ajouter des options au premier bouton déroulant
-        comboBox1->addItem("Option 1");
-        comboBox1->addItem("Option 2");
-        comboBox1->addItem("Option 3");
+        comboBox1->addItem("Disk checker");
+        comboBox1->addItem("Network checker");
+        comboBox1->addItem("Removable drives checker");
+        comboBox1->addItem("Service checker");
 
         // Ajouter un texte pour afficher la sélection du premier bouton
         Wt::WText* selectedText1 = container->addWidget(std::make_unique<Wt::WText>("<br/>"));
@@ -148,20 +149,25 @@ public:
 
             // Réinitialiser les options du deuxième bouton déroulant en fonction de la sélection
             dynamicComboBox1->clear(); // Vide les options précédentes
-            if (selectedOption == "Option 1") {
-                dynamicComboBox1->addItem("Paramètre 1B");
-                dynamicComboBox1->addItem("Paramètre 1A");
-                dynamicComboBox1->addItem("Paramètre 1C");
+            if (selectedOption == "Disk checker") {
+                dynamicComboBox1->addItem("C:\\");
+                dynamicComboBox1->addItem("D:\\");
+                dynamicComboBox1->addItem("E:\\");
             }
-            else if (selectedOption == "Option 2") {
+            else if (selectedOption == "Network checker") {
                 dynamicComboBox1->addItem("Paramètre 2A");
                 dynamicComboBox1->addItem("Paramètre 2B");
                 dynamicComboBox1->addItem("Paramètre 2C");
             }
-            else if (selectedOption == "Option 3") {
+            else if (selectedOption == "Removable drives checker") {
                 dynamicComboBox1->addItem("Paramètre 3A");
                 dynamicComboBox1->addItem("Paramètre 3B");
                 dynamicComboBox1->addItem("Paramètre 3C");
+            }
+            else if (selectedOption == "Service checker") {
+                dynamicComboBox1->addItem("Paramètre 4A");
+                dynamicComboBox1->addItem("Paramètre 4B");
+                dynamicComboBox1->addItem("Paramètre 4C");
             }
 
             // Rendre visible le deuxième bouton déroulant après la sélection
@@ -310,12 +316,165 @@ public:
                 }
             }
             });
+        /*container->addWidget(std::make_unique<Wt::WText>("Tentative de connexion à MySQL...<br/>"));
+
+        try {
+            auto mysqlBackend = std::make_unique<Wt::Dbo::backend::MySQL>("sys_monitor", "root", "Mah010505!", "localhost", 3306);
+            Wt::Dbo::Session session;
+            session.setConnection(std::move(mysqlBackend));
+            session.createTables(); // Create tables based on models
+            container->addWidget(std::make_unique<Wt::WText>("Connexion réussie à la base de données MySQL.<br/>"));
+        }
+        catch (const Wt::Dbo::Exception& e) {
+            container->addWidget(std::make_unique<Wt::WText>("Erreur de connexion : " + std::string(e.what()) + "<br/>"));
+        }
+        catch (const std::exception& e) {
+            container->addWidget(std::make_unique<Wt::WText>("Erreur inattendue : " + std::string(e.what()) + "<br/>"));
+        }
+    }*/
     }
 };
 
+class Config {
+public:
+    Wt::Dbo::dbo_traits<int>::IdType config_id;
+    std::string name;
+    std::string desc;
+
+    template<class Action>
+    void persist(Action& a) {
+        Wt::Dbo::field(a, config_id, "config_id");
+        Wt::Dbo::field(a, name, "name");
+        Wt::Dbo::field(a, desc, "desc");
+    }
+};
+
+class Control {
+public:
+    Wt::Dbo::dbo_traits<int>::IdType control_id;
+    std::string name;
+    std::string description;
+
+    template<class Action>
+    void persist(Action& a) {
+        Wt::Dbo::field(a, control_id, "control_id");
+        Wt::Dbo::field(a, name, "name");
+        Wt::Dbo::field(a, description, "description");
+    }
+};
+
+class ConfigCtrl {
+public:
+    Wt::Dbo::dbo_traits<int>::IdType configid;
+    Wt::Dbo::dbo_traits<int>::IdType ctrlid;
+
+    Wt::Dbo::ptr<Config> config;   // Relation avec Config
+    Wt::Dbo::ptr<Control> control; // Relation avec Control
+
+    template<class Action>
+    void persist(Action& a) {
+        Wt::Dbo::field(a, configid, "configid");
+        Wt::Dbo::field(a, ctrlid, "ctrlid");
+        Wt::Dbo::belongsTo(a, config, "configid");
+        Wt::Dbo::belongsTo(a, control, "ctrlid");
+    }
+};
+
+class Parametre {
+public:
+    Wt::Dbo::dbo_traits<int>::IdType param_id;
+    std::string name;
+    std::string value;
+    std::string value_2;
+    Wt::Dbo::ptr<Control> control;  // Foreign key to `Control`
+
+    template<class Action>
+    void persist(Action& a) {
+        Wt::Dbo::field(a, param_id, "param_id");
+        Wt::Dbo::field(a, name, "name");
+        Wt::Dbo::field(a, value, "value");
+        Wt::Dbo::field(a, value_2, "value_2");
+        Wt::Dbo::belongsTo(a, control, "control_id");  // Association avec Control
+    }
+};
+
+void ajouterNouvelleConfig(Wt::WContainerWidget* container, Wt::Dbo::Session& session) {
+    auto nameEdit = container->addWidget(std::make_unique<Wt::WLineEdit>());
+    nameEdit->setPlaceholderText("Nom de la configuration");
+
+    auto descEdit = container->addWidget(std::make_unique<Wt::WLineEdit>());
+    descEdit->setPlaceholderText("Description de la configuration");
+
+    auto submitButton = container->addWidget(std::make_unique<Wt::WPushButton>("Ajouter Configuration"));
+    auto message = container->addWidget(std::make_unique<Wt::WText>());
+
+    submitButton->clicked().connect([=, &session] {
+        Wt::Dbo::Transaction transaction(session);
+
+        // Créer un nouvel objet Config avec les valeurs entrées
+        auto nouvelleConfig = session.add(std::make_unique<Config>());
+        nouvelleConfig.modify()->name = nameEdit->text().toUTF8();
+        nouvelleConfig.modify()->desc = descEdit->text().toUTF8();
+
+        // Committer la transaction pour sauvegarder dans la base de données
+        transaction.commit();
+
+        message->setText("Nouvelle configuration ajoutée avec succès !");
+        });
+}
+
+void ajouterNouveauParametre(Wt::WContainerWidget* container, Wt::Dbo::Session& session) {
+    auto nameEdit = container->addWidget(std::make_unique<Wt::WLineEdit>());
+    nameEdit->setPlaceholderText("Nom du paramètre");
+
+    auto valueEdit = container->addWidget(std::make_unique<Wt::WLineEdit>());
+    valueEdit->setPlaceholderText("Valeur du paramètre");
+
+    auto controlIdEdit = container->addWidget(std::make_unique<Wt::WLineEdit>());
+    controlIdEdit->setPlaceholderText("ID du contrôle associé");
+
+    auto submitButton = container->addWidget(std::make_unique<Wt::WPushButton>("Ajouter Paramètre"));
+    auto message = container->addWidget(std::make_unique<Wt::WText>());
+
+    submitButton->clicked().connect([=, &session] {
+        Wt::Dbo::Transaction transaction(session);
+
+        int controlId = std::stoi(controlIdEdit->text().toUTF8());
+        Wt::Dbo::ptr<Control> control = session.find<Control>().where("control_id = ?").bind(controlId);
+
+        if (control) {
+            auto nouveauParam = session.add(std::make_unique<Parametre>());
+            nouveauParam.modify()->name = nameEdit->text().toUTF8();
+            nouveauParam.modify()->value = valueEdit->text().toUTF8();
+            nouveauParam.modify()->control = control;
+
+            transaction.commit();
+            message->setText("Nouveau paramètre ajouté avec succès !");
+        }
+        else {
+            message->setText("Erreur: Contrôle introuvable.");
+        }
+        });
+}
+
 // Point d'entrée de l'application Wt
 Wt::WApplication* createApplication(const Wt::WEnvironment& env) {
-    return new DropdownExampleApp(env);
+    auto app = std::make_unique<DropdownExampleApp>(env);
+
+    auto container = app->root();  // Utilisation du conteneur racine
+
+    // Créer une session Dbo pour gérer les transactions avec la base de données
+    Wt::Dbo::backend::MySQL connection("sys_monitor", "root", "Mah010505!", "localhost");
+    Wt::Dbo::Session session;
+    session.setConnection(std::make_unique<Wt::Dbo::backend::MySQL>(connection));
+
+    // Ajouter des champs pour la configuration
+    ajouterNouvelleConfig(container, session);
+
+    // Ajouter des champs pour les paramètres
+    ajouterNouveauParametre(container, session);
+
+    return app.release();
 }
 
 int main(int argc, char** argv) {

@@ -24,6 +24,9 @@
 #include <Wt/WContainerWidget.h>
 #include <Wt/WComboBox.h>
 #include <Wt/WFileUpload.h>
+#include <Wt/Dbo/Dbo.h>
+#include <Wt/Dbo/Session.h>
+#include <Wt/Dbo/backend/MySQL.h>
 #include <Wt/WPopupMenu.h>
 #include <Wt/WSplitButton.h>
 #include <Wt/WStringListModel.h>
