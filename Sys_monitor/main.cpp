@@ -1,4 +1,6 @@
-#include "header.h"
+ï»¿#include "header.h"
+#define _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING
+#pragma warning(disable : 4275)
 using namespace std;
 
 void network_checker_wrapper(const std::string& adapterName, const std::string& logFileName) {
@@ -10,23 +12,23 @@ void list_removable_drives_wrapper(const std::string& params, const std::string&
 }
 
 void executeTest(const std::string& testID, const std::string& params, int warningThreshold, const std::string& logFileName) {
-    // Map pour les fonctions nécessitant plusieurs paramètres (wchar_t*, int, string)
+    // Map pour les fonctions nÃ©cessitant plusieurs paramÃ¨tres (wchar_t*, int, string)
     std::map<std::string, std::function<void(const wchar_t*, int, const std::string&)>> testMapWithMultipleParams = {
-        { "1", disk_free_space }  // Ne prend désormais qu'un seul seuil (warningThreshold)
+        { "1", disk_free_space }  // Ne prend dÃ©sormais qu'un seul seuil (warningThreshold)
     };
 
-    // Map pour les fonctions nécessitant un seul paramètre (params + logFileName)
+    // Map pour les fonctions nÃ©cessitant un seul paramÃ¨tre (params + logFileName)
     std::map<std::string, std::function<void(const std::string&, const std::string&)>> testMapWithParams = {
         { "2", network_checker_wrapper },
         { "3", list_removable_drives_wrapper }
     };
 
-    // Map pour les fonctions sans paramètre (seulement logFileName)
+    // Map pour les fonctions sans paramÃ¨tre (seulement logFileName)
     std::map<std::string, std::function<void(const std::string&)>> testMapNoParams = {
         { "4", ListRunningServices }
     };
 
-    // Appel des fonctions avec plusieurs paramètres (comme pour disk_free_space)
+    // Appel des fonctions avec plusieurs paramÃ¨tres (comme pour disk_free_space)
     auto itWithMultipleParams = testMapWithMultipleParams.find(testID);
     if (itWithMultipleParams != testMapWithMultipleParams.end()) {
         std::stringstream ss(params);
@@ -36,34 +38,34 @@ void executeTest(const std::string& testID, const std::string& params, int warni
         // Conversion de std::string en std::wstring pour Windows API
         std::wstring wDriveLetter(driveLetter.begin(), driveLetter.end());
 
-        // Suppression du paramètre d'alerte, seule la valeur du seuil d'avertissement est utilisée
+        // Suppression du paramÃ¨tre d'alerte, seule la valeur du seuil d'avertissement est utilisÃ©e
         itWithMultipleParams->second(wDriveLetter.c_str(), warningThreshold, logFileName);
         return;
     }
 
-    // Appel des fonctions avec un seul paramètre (params + logFileName)
+    // Appel des fonctions avec un seul paramÃ¨tre (params + logFileName)
     auto itWithParams = testMapWithParams.find(testID);
     if (itWithParams != testMapWithParams.end()) {
         itWithParams->second(params, logFileName);
         return;
     }
 
-    // Appel des fonctions sans paramètre (juste logFileName)
+    // Appel des fonctions sans paramÃ¨tre (juste logFileName)
     auto itNoParams = testMapNoParams.find(testID);
     if (itNoParams != testMapNoParams.end()) {
         itNoParams->second(logFileName);
         return;
     }
 
-    // Si l'ID du test n'est pas trouvé
-    logToFile("ID du test non trouvé : " + testID, logFileName);
+    // Si l'ID du test n'est pas trouvÃ©
+    logToFile("ID du test non trouvÃ© : " + testID, logFileName);
 }
 
 void executeTestsFromConfig(const std::string& configFile, int warningThreshold, const std::string& logFileName) {
     std::vector<ConfigEntry> configEntries = readConfigFile(configFile);
 
     for (const auto& entry : configEntries) {
-        logToFile("Exécution du test : " + entry.testID + " (" + entry.ctrlName + ")", logFileName);
+        logToFile("ExÃ©cution du test : " + entry.testID + " (" + entry.ctrlName + ")", logFileName);
         executeTest(entry.testID, entry.params, warningThreshold, logFileName);
     }
 }
@@ -91,12 +93,12 @@ void generateConfigFile() {
                 std::string value = res->getString("value");
                 std::string value_2 = res->getString("value_2");
 
-                std::cout << "Écriture : " << control_id << ";" << name << ";" << description << ";" << value << ";" << value_2 << std::endl;
+                std::cout << "Ã‰criture : " << control_id << ";" << name << ";" << description << ";" << value << ";" << value_2 << std::endl;
                 configFile << control_id << ";" << name << ";" << description << ";" << value << ";" << value_2 << std::endl;
             }
 
             configFile.close();
-            std::cout << "Le fichier config2.txt a été généré avec succès." << std::endl;
+            std::cout << "Le fichier config2.txt a Ã©tÃ© gÃ©nÃ©rÃ© avec succÃ¨s." << std::endl;
         }
         else {
             std::cerr << "Impossible d'ouvrir le fichier config2.txt." << std::endl;
@@ -104,237 +106,169 @@ void generateConfigFile() {
 
     }
     catch (sql::SQLException& e) {
-        std::cerr << "Erreur lors de la génération du fichier config2.txt : " << e.what() << std::endl;
+        std::cerr << "Erreur lors de la gÃ©nÃ©ration du fichier config2.txt : " << e.what() << std::endl;
     }
 }
 
+class MyMemoryResource : public std::pmr::memory_resource {
+protected:
+    void* do_allocate(std::size_t bytes, std::size_t alignment) override {
+        return ::operator new(bytes); // Utilisez l'opÃ©rateur new standard
+    }
+
+    void do_deallocate(void* p, std::size_t bytes, std::size_t alignment) override {
+        ::operator delete(p); // Utilisez l'opÃ©rateur delete standard
+    }
+
+    bool do_is_equal(const memory_resource& other) const noexcept override {
+        return this == &other; // VÃ©rifie si les ressources sont identiques
+    }
+};
 
 class DropdownExampleApp : public Wt::WApplication {
 public:
     DropdownExampleApp(const Wt::WEnvironment& env)
         : Wt::WApplication(env) {
+        // Set the title of the web page
+        setTitle(Wt::WString::fromUTF8(u8"SystÃ¨me monitor"));
 
-        // Définir le titre de la page web
-        setTitle("Systeme monitor");
-
-        // Créer un conteneur pour les widgets
+        // Create a container for widgets
         Wt::WContainerWidget* container = root();
 
-        // Ajouter un texte descriptif pour le premier bouton déroulant
-        container->addWidget(std::make_unique<Wt::WText>("Sélectionnez une option dans la première liste : "));
+        // Add a text to display the save status
+        statusText_ = container->addWidget(std::make_unique<Wt::WText>());
 
-        // Créer un premier bouton déroulant (comboBox1)
-        Wt::WComboBox* comboBox1 = container->addWidget(std::make_unique<Wt::WComboBox>());
+        // Add a button to open the HTML file
+        Wt::WPushButton* openHtmlButton = container->addWidget(std::make_unique<Wt::WPushButton>(
+            Wt::WString::fromUTF8(u8"TÃ©lÃ©charger la config")));
+        openHtmlButton->clicked().connect([this]() {
+            // Create a link to the HTML page
+            std::string htmlPageLink = "HTMLPage.htm"; // Path to your HTML page
 
-        // Ajouter des options au premier bouton déroulant
-        comboBox1->addItem("Disk checker");
-        comboBox1->addItem("Network checker");
-        comboBox1->addItem("Removable drives checker");
-        comboBox1->addItem("Service checker");
-
-        // Ajouter un texte pour afficher la sélection du premier bouton
-        Wt::WText* selectedText1 = container->addWidget(std::make_unique<Wt::WText>("<br/>"));
-
-        // Créer un deuxième bouton déroulant (qui sera caché au départ) pour comboBox1
-        Wt::WComboBox* dynamicComboBox1 = container->addWidget(std::make_unique<Wt::WComboBox>());
-        dynamicComboBox1->setHidden(true); // Cache le deuxième bouton déroulant au départ
-
-        // Ajouter un texte pour afficher la sélection du deuxième bouton
-        Wt::WText* selectedText2 = container->addWidget(std::make_unique<Wt::WText>("<br/>"));
-
-        // Connecter l'événement 'changed' du premier bouton à une fonction
-        comboBox1->changed().connect([this, comboBox1, dynamicComboBox1, selectedText1] {
-            std::string selectedOption = comboBox1->currentText().toUTF8();
-            selectedText1->setText("Première liste sélectionnée : " + selectedOption);
-
-            // Réinitialiser les options du deuxième bouton déroulant en fonction de la sélection
-            dynamicComboBox1->clear(); // Vide les options précédentes
-            if (selectedOption == "Disk checker") {
-                dynamicComboBox1->addItem("C:\\");
-                dynamicComboBox1->addItem("D:\\");
-                dynamicComboBox1->addItem("E:\\");
-            }
-            else if (selectedOption == "Network checker") {
-                dynamicComboBox1->addItem("Paramètre 2A");
-                dynamicComboBox1->addItem("Paramètre 2B");
-                dynamicComboBox1->addItem("Paramètre 2C");
-            }
-            else if (selectedOption == "Removable drives checker") {
-                dynamicComboBox1->addItem("Paramètre 3A");
-                dynamicComboBox1->addItem("Paramètre 3B");
-                dynamicComboBox1->addItem("Paramètre 3C");
-            }
-            else if (selectedOption == "Service checker") {
-                dynamicComboBox1->addItem("Paramètre 4A");
-                dynamicComboBox1->addItem("Paramètre 4B");
-                dynamicComboBox1->addItem("Paramètre 4C");
-            }
-
-            // Rendre visible le deuxième bouton déroulant après la sélection
-            dynamicComboBox1->setHidden(false);
+            // Redirect to the HTML page
+            Wt::WApplication::instance()->redirect(htmlPageLink);
             });
 
-        // Connecter l'événement 'changed' du deuxième bouton déroulant à une fonction
-        dynamicComboBox1->changed().connect([this, dynamicComboBox1, selectedText2] {
-            selectedText2->setText("Deuxième liste sélectionnée : " + dynamicComboBox1->currentText());
+        // Add a "New Config" button
+        Wt::WPushButton* newConfigButton = root()->addWidget(std::make_unique<Wt::WPushButton>("New Config"));
+        newConfigButton->clicked().connect([this, container]() {
+            creerNouvelleConfiguration(container);
             });
 
-        // Ajouter un saut de ligne avant le deuxième ensemble de widgets
+        // Add a "Save Config" button
+        Wt::WPushButton* saveConfigButton = container->addWidget(std::make_unique<Wt::WPushButton>("Save Config"));
+        saveConfigButton->clicked().connect([this, container]() {
+            sauvegarderConfiguration(container); // Call the function correctly
+            });
+
+        // Add a line break
         container->addWidget(std::make_unique<Wt::WBreak>());
+    }
 
-        // Ajouter un texte descriptif pour le deuxième ensemble de boutons déroulants
-        container->addWidget(std::make_unique<Wt::WText>("Sélectionnez une option dans la deuxième liste : "));
+private:
+    std::vector<std::pair<Wt::WComboBox*, Wt::WComboBox*>> configurations_;
+    Wt::WText* statusText_; // To display status
 
-        // Créer un deuxième bouton déroulant (comboBox2)
-        Wt::WComboBox* comboBox2 = container->addWidget(std::make_unique<Wt::WComboBox>());
-        comboBox2->addItem("a");
-        comboBox2->addItem("b");
-        comboBox2->addItem("c");
-        comboBox2->addItem("d");
+    // Function to save the configuration
+    void sauvegarderConfiguration(Wt::WContainerWidget* container) {
+        std::stringstream fileStream;
 
-        // Ajouter un texte pour afficher la sélection du deuxième bouton
-        Wt::WText* selectedText3 = container->addWidget(std::make_unique<Wt::WText>("<br/>"));
+        for (const auto& configPair : configurations_) {
+            Wt::WComboBox* testComboBox = configPair.first;
+            Wt::WComboBox* paramComboBox = configPair.second;
 
-        // Créer un deuxième bouton déroulant (qui sera caché au départ) pour comboBox2
-        Wt::WComboBox* dynamicComboBox2 = container->addWidget(std::make_unique<Wt::WComboBox>());
-        dynamicComboBox2->setHidden(true); // Cache le deuxième bouton déroulant au départ
+            // Get the text in UTF-8
+            std::string test = testComboBox->currentText().toUTF8();
+            std::string param = paramComboBox->currentText().toUTF8();
 
-        // Ajouter un texte pour afficher la sélection du deuxième bouton
-        Wt::WText* selectedText4 = container->addWidget(std::make_unique<Wt::WText>("<br/>"));
-
-        // Connecter l'événement 'changed' du comboBox2 à une fonction
-        comboBox2->changed().connect([this, comboBox2, dynamicComboBox2, selectedText3] {
-            std::string selectedOption = comboBox2->currentText().toUTF8();
-            selectedText3->setText("Deuxième liste sélectionnée : " + selectedOption);
-
-            // Réinitialiser les options du deuxième bouton déroulant en fonction de la sélection dans comboBox2
-            dynamicComboBox2->clear(); // Vide les options précédentes
-            if (selectedOption == "a") {
-                dynamicComboBox2->addItem("Paramètre a1");
-                dynamicComboBox2->addItem("Paramètre a2");
-            }
-            else if (selectedOption == "b") {
-                dynamicComboBox2->addItem("Paramètre b1");
-                dynamicComboBox2->addItem("Paramètre b2");
-            }
-            else if (selectedOption == "c") {
-                dynamicComboBox2->addItem("Paramètre c1");
-                dynamicComboBox2->addItem("Paramètre c2");
-            }
-            else if (selectedOption == "d") {
-                dynamicComboBox2->addItem("Paramètre d1");
-                dynamicComboBox2->addItem("Paramètre d2");
-            }
-
-            // Rendre visible le deuxième bouton déroulant après la sélection
-            dynamicComboBox2->setHidden(false);
-            });
-
-        // Connecter l'événement 'changed' du dynamicComboBox2 à une fonction
-        dynamicComboBox2->changed().connect([this, dynamicComboBox2, selectedText4] {
-            selectedText4->setText("Deuxième liste déroulante sélectionnée : " + dynamicComboBox2->currentText());
-            });
-
-        // Ajouter un gestionnaire de fichiers
-        Wt::WFileUpload* fu = container->addNew<Wt::WFileUpload>();
-        fu->setProgressBar(std::make_unique<Wt::WProgressBar>());
-        fu->setMargin(10, Wt::Side::Right);
-
-        // Définir un bouton pour démarrer le téléchargement
-        Wt::WPushButton* uploadButton = container->addNew<Wt::WPushButton>("Send");
-        uploadButton->setMargin(10, Wt::Side::Left | Wt::Side::Right);
-
-        // Zone de texte pour afficher les résultats du téléchargement
-        Wt::WText* out = container->addNew<Wt::WText>();
-
-        // Téléchargement lorsque le bouton est cliqué
-        uploadButton->clicked().connect([this, fu, uploadButton, out] {
-            fu->upload();
-            uploadButton->disable();
-            out->setText("Uploading file...");
-            });
-
-        // Téléchargement automatique lorsque l'utilisateur sélectionne un fichier
-        fu->changed().connect([this, fu, uploadButton, out] {
-            fu->upload();
-            uploadButton->disable();
-            out->setText("File selection changed. Uploading file...");
-            });
-
-        // Réagir à un téléchargement réussi
-        fu->uploaded().connect([this, out, uploadButton] {
-            out->setText("File upload finished successfully.");
-            uploadButton->enable(); // Réactive le bouton après la fin du téléchargement
-            });
-
-        // Réagir à un problème de téléchargement
-        fu->fileTooLarge().connect([this, out, uploadButton] {
-            out->setText("File is too large.");
-            uploadButton->enable(); // Réactive le bouton si le fichier est trop volumineux
-            });
-
-        // Texte qui affichera l'état de sauvegarde
-        Wt::WText* statusText = container->addWidget(std::make_unique<Wt::WText>());
-
-        // Créer un bouton split avec menu déroulant pour "Save" et "Save As"
-        Wt::WSplitButton* sb = container->addWidget(std::make_unique<Wt::WSplitButton>("Save"));
-        sb->setMargin(10, Wt::Side::Left);
-
-        // Menu déroulant pour "Save As"
-        auto popup = std::make_unique<Wt::WPopupMenu>();
-        auto popup_ = popup.get();
-        popup_->addItem("Save As ...");
-
-        // Ajouter le menu déroulant au bouton
-        sb->dropDownButton()->setMenu(std::move(popup));
-
-        // Connecter le bouton "Save" à l'enregistrement local
-        sb->actionButton()->clicked().connect([this, comboBox1, comboBox2, statusText] {
-            std::string choice1 = comboBox1->currentText().toUTF8();
-            std::string choice2 = comboBox2->currentText().toUTF8();
-            statusText->setText("Choix enregistrés : " + choice1 + ", " + choice2);
-            });
-
-        // Connecter l'option "Save As" pour enregistrer les choix dans un fichier texte
-        popup_->itemSelected().connect([this, comboBox1, comboBox2, dynamicComboBox1, dynamicComboBox2, statusText](Wt::WMenuItem* item) {
-            if (item && item->text() == "Save As ...") {
-                std::ofstream file("choix_utilisateur.txt");
-                if (file.is_open()) {
-                    std::string choice1 = comboBox1->currentText().toUTF8();
-                    std::string choice2 = comboBox2->currentText().toUTF8();
-                    std::string choice_param1 = dynamicComboBox1->currentText().toUTF8(); // Récupère le texte sélectionné
-                    std::string choice_param2 = dynamicComboBox2->currentText().toUTF8(); // Récupère le texte sélectionné
-                    file << "Choix 1 : " << choice1 << " ";
-                    file << "paramètre : " << choice_param1 << "\n";  // Écrit le texte sélectionné
-                    file << "Choix 2 : " << choice2 << " ";
-                    file << "paramètre : " << choice_param2 << "\n";  // Écrit le texte sélectionné
-                    file.close();
-                    statusText->setText("Choix sauvegardés dans 'choix_utilisateur.txt'.");
-                }
-                else {
-                    statusText->setText("Erreur : Impossible de créer le fichier.");
-                }
-            }
-            });
-        /*container->addWidget(std::make_unique<Wt::WText>("Tentative de connexion à MySQL...<br/>"));
-
-        try {
-            auto mysqlBackend = std::make_unique<Wt::Dbo::backend::MySQL>("sys_monitor", "root", "Mah010505!", "localhost", 3306);
-            Wt::Dbo::Session session;
-            session.setConnection(std::move(mysqlBackend));
-            session.createTables(); // Create tables based on models
-            container->addWidget(std::make_unique<Wt::WText>("Connexion réussie à la base de données MySQL.<br/>"));
+            // Write into the stream
+            fileStream << "Test : " << test << ", ParamÃ¨tre : " << param << "\n";
         }
-        catch (const Wt::Dbo::Exception& e) {
-            container->addWidget(std::make_unique<Wt::WText>("Erreur de connexion : " + std::string(e.what()) + "<br/>"));
+
+        // File content
+        std::string fileContent = fileStream.str();
+        std::string fileName = "configurations.txt";
+
+        // Open the file in UTF-8
+        std::ofstream outFile(fileName);
+        if (outFile) {
+            outFile << fileContent;  // Write into the file
+            outFile.close();
         }
-        catch (const std::exception& e) {
-            container->addWidget(std::make_unique<Wt::WText>("Erreur inattendue : " + std::string(e.what()) + "<br/>"));
+        else {
+            statusText_->setText(Wt::WString::fromUTF8("Erreur lors de la crÃ©ation du fichier de configuration."));
+            return;
         }
-    }*/
+
+        // Create a download link
+        Wt::WAnchor* downloadLink = container->addWidget(std::make_unique<Wt::WAnchor>(Wt::WLink(fileName), "TÃ©lÃ©charger la configuration"));
+
+        statusText_->setText(Wt::WString::fromUTF8("Configuration prÃªte pour le tÃ©lÃ©chargement."));
+    }
+
+    // Function to create a new configuration
+    void creerNouvelleConfiguration(Wt::WContainerWidget* container) {
+        // Add widgets for the new configuration
+        Wt::WContainerWidget* configContainer = container->addWidget(std::make_unique<Wt::WContainerWidget>());
+
+        // Add text to indicate the test selection
+        configContainer->addWidget(std::make_unique<Wt::WText>("SÃ©lectionnez un test dans la liste : "));
+
+        // Create the first dropdown for tests
+        Wt::WComboBox* testComboBox = configContainer->addWidget(std::make_unique<Wt::WComboBox>());
+        testComboBox->addItem("Disk checker");
+        testComboBox->addItem("Network checker");
+        testComboBox->addItem("Removable drives checker");
+        testComboBox->addItem("Service checker");
+
+        // Add text to display the selected test
+        Wt::WText* selectedTestText = configContainer->addWidget(std::make_unique<Wt::WText>("<br/>"));
+
+        // Add a second hidden dropdown for test parameters
+        Wt::WComboBox* paramComboBox = configContainer->addWidget(std::make_unique<Wt::WComboBox>());
+        paramComboBox->setHidden(true); // Hide the second dropdown initially
+
+        // Add text to display the selected parameter
+        Wt::WText* selectedParamText = configContainer->addWidget(std::make_unique<Wt::WText>("<br/>"));
+
+        // Connect the 'changed' event of the test dropdown
+        testComboBox->changed().connect([=]() mutable {
+            std::string selectedTest = testComboBox->currentText().toUTF8();
+            selectedTestText->setText("Test sÃ©lectionnÃ© : " + selectedTest);
+
+            // Reset the parameter options based on the selected test
+            paramComboBox->clear();
+            if (selectedTest == "Disk checker") {
+                paramComboBox->addItem("C:\\");
+                paramComboBox->addItem("D:\\");
+                paramComboBox->addItem("E:\\");
+            }
+            else if (selectedTest == "Network checker") {
+                paramComboBox->addItem("ParamÃ¨tre 2A");
+                paramComboBox->addItem("ParamÃ¨tre 2B");
+                paramComboBox->addItem("ParamÃ¨tre 2C");
+            }
+            else if (selectedTest == "Removable drives checker") {
+                paramComboBox->addItem("ParamÃ¨tre 3A");
+                paramComboBox->addItem("ParamÃ¨tre 3B");
+                paramComboBox->addItem("ParamÃ¨tre 3C");
+            }
+            else if (selectedTest == "Service checker") {
+                paramComboBox->addItem("ParamÃ¨tre 4A");
+                paramComboBox->addItem("ParamÃ¨tre 4B");
+                paramComboBox->addItem("ParamÃ¨tre 4C");
+            }
+
+            paramComboBox->setHidden(false); // Make the parameter dropdown visible
+            });
+
+        // Store the comboboxes in the configurations vector for saving
+        configurations_.emplace_back(testComboBox, paramComboBox);
+
+        // Add a line break after the configuration
+        configContainer->addWidget(std::make_unique<Wt::WBreak>());
     }
 };
-
 class Config {
 public:
     Wt::Dbo::dbo_traits<int>::IdType config_id;
@@ -411,29 +345,29 @@ void ajouterNouvelleConfig(Wt::WContainerWidget* container, Wt::Dbo::Session& se
     submitButton->clicked().connect([=, &session] {
         Wt::Dbo::Transaction transaction(session);
 
-        // Créer un nouvel objet Config avec les valeurs entrées
+        // CrÃ©er un nouvel objet Config avec les valeurs entrÃ©es
         auto nouvelleConfig = session.add(std::make_unique<Config>());
         nouvelleConfig.modify()->name = nameEdit->text().toUTF8();
         nouvelleConfig.modify()->desc = descEdit->text().toUTF8();
 
-        // Committer la transaction pour sauvegarder dans la base de données
+        // Committer la transaction pour sauvegarder dans la base de donnÃ©es
         transaction.commit();
 
-        message->setText("Nouvelle configuration ajoutée avec succès !");
+        message->setText("Nouvelle configuration ajoutÃ©e avec succÃ¨s !");
         });
 }
 
 void ajouterNouveauParametre(Wt::WContainerWidget* container, Wt::Dbo::Session& session) {
     auto nameEdit = container->addWidget(std::make_unique<Wt::WLineEdit>());
-    nameEdit->setPlaceholderText("Nom du paramètre");
+    nameEdit->setPlaceholderText("Nom du paramÃ¨tre");
 
     auto valueEdit = container->addWidget(std::make_unique<Wt::WLineEdit>());
-    valueEdit->setPlaceholderText("Valeur du paramètre");
+    valueEdit->setPlaceholderText("Valeur du paramÃ¨tre");
 
     auto controlIdEdit = container->addWidget(std::make_unique<Wt::WLineEdit>());
-    controlIdEdit->setPlaceholderText("ID du contrôle associé");
+    controlIdEdit->setPlaceholderText("ID du contrÃ´le associÃ©");
 
-    auto submitButton = container->addWidget(std::make_unique<Wt::WPushButton>("Ajouter Paramètre"));
+    auto submitButton = container->addWidget(std::make_unique<Wt::WPushButton>("Ajouter ParamÃ¨tre"));
     auto message = container->addWidget(std::make_unique<Wt::WText>());
 
     submitButton->clicked().connect([=, &session] {
@@ -449,21 +383,21 @@ void ajouterNouveauParametre(Wt::WContainerWidget* container, Wt::Dbo::Session& 
             nouveauParam.modify()->control = control;
 
             transaction.commit();
-            message->setText("Nouveau paramètre ajouté avec succès !");
+            message->setText("Nouveau paramÃ¨tre ajoutÃ© avec succÃ¨s !");
         }
         else {
-            message->setText("Erreur: Contrôle introuvable.");
+            message->setText("Erreur: ContrÃ´le introuvable.");
         }
         });
 }
 
-// Point d'entrée de l'application Wt
+// Point d'entrÃ©e de l'application Wt
 Wt::WApplication* createApplication(const Wt::WEnvironment& env) {
     auto app = std::make_unique<DropdownExampleApp>(env);
 
     auto container = app->root();  // Utilisation du conteneur racine
 
-    // Créer une session Dbo pour gérer les transactions avec la base de données
+    // CrÃ©er une session Dbo pour gÃ©rer les transactions avec la base de donnÃ©es
     Wt::Dbo::backend::MySQL connection("sys_monitor", "root", "Mah010505!", "localhost");
     Wt::Dbo::Session session;
     session.setConnection(std::make_unique<Wt::Dbo::backend::MySQL>(connection));
@@ -471,7 +405,7 @@ Wt::WApplication* createApplication(const Wt::WEnvironment& env) {
     // Ajouter des champs pour la configuration
     ajouterNouvelleConfig(container, session);
 
-    // Ajouter des champs pour les paramètres
+    // Ajouter des champs pour les paramÃ¨tres
     ajouterNouveauParametre(container, session);
 
     return app.release();
@@ -482,6 +416,19 @@ int main(int argc, char** argv) {
         return std::make_unique<DropdownExampleApp>(env);
         });
 }
+
+/*int main() {
+    MyMemoryResource myResource;
+
+    // Utilisation de myResource pour allouer de la mÃ©moire
+    std::pmr::polymorphic_allocator<int> alloc(&myResource);
+    int* arr = alloc.allocate(10); // Allouer un tableau de 10 entiers
+
+    // Utilisation d'arr ...
+
+    alloc.deallocate(arr, 10); // LibÃ©rer la mÃ©moire
+    return 0;
+}*/
 
 //int main() {
 //    int warningThreshold = 80;

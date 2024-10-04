@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="Microsoft Visual Studio">
+    <title>Systeme Monitor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+        .input-group {
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function downloadFile(filename, content) {
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function sauvegarderConfiguration() {
+            const testValue = document.getElementById('testInput').value;
+            const paramValue = document.getElementById('paramSelect').value;
+            const filename = "configurations.txt";
+            const content = `Test : ${testValue}, Paramètre : ${paramValue}\n`;
+            downloadFile(filename, content);
+            document.getElementById("status").innerText = "Configuration prête pour le téléchargement.";
+        }
+    </script>
+</head>
+<body>
+    <h1>Systeme Monitor</h1>
+    <p id="status">Statut : En attente de sauvegarde...</p>
+
+    <div class="input-group">
+        <label for="testInput">Test :</label>
+        <input type="text" id="testInput" placeholder="Entrez un test">
+    </div>
+
+    <div class="input-group">
+        <label for="paramSelect">Paramètre :</label>
+        <select id="paramSelect">
+            <option value="C:\\">C:\\</option>
+            <option value="D:\\">D:\\</option>
+            <option value="E:\\">E:\\</option>
+        </select>
+    </div>
+
+    <button onclick="sauvegarderConfiguration()">Sauvegarder Configuration</button>
+</body>
+</html>

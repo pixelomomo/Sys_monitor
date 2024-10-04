@@ -28,3 +28,17 @@ std::string wcharToString(const wchar_t* wcharStr) {
     WideCharToMultiByte(CP_UTF8, 0, wcharStr, -1, &str[0], size_needed, nullptr, nullptr);
     return str;
 }
+
+std::wstring utf8_to_utf16(const std::string& utf8_str) {
+    int size_needed = MultiByteToWideChar(CP_UTF8, 0, &utf8_str[0], (int)utf8_str.size(), NULL, 0);
+    std::wstring wstrTo(size_needed, 0);
+    MultiByteToWideChar(CP_UTF8, 0, &utf8_str[0], (int)utf8_str.size(), &wstrTo[0], size_needed);
+    return wstrTo;
+}
+
+std::string utf16_to_utf8(const std::wstring& utf16_str) {
+    int size_needed = WideCharToMultiByte(CP_UTF8, 0, &utf16_str[0], (int)utf16_str.size(), NULL, 0, NULL, NULL);
+    std::string strTo(size_needed, 0);
+    WideCharToMultiByte(CP_UTF8, 0, &utf16_str[0], (int)utf16_str.size(), &strTo[0], size_needed, NULL, NULL);
+    return strTo;
+}

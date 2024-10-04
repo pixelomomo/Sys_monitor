@@ -122,6 +122,7 @@
       <PreprocessorDefinitions>HPDF_DLL;WIN32;STATIC_CONCPP;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Program Files\MySQL\mysql-9.0.1-winx64\include;C:\boost_1_86_0\boost;C:\Wt 4.10.4 msvs2022 x64\include;C:\Program Files\MySQL\MySQL Connector C++ 9.0\include\jdbc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -155,6 +156,11 @@
     <Text Include="config.txt" />
     <Text Include="config2.txt" />
     <Text Include="system_monitor_log.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HTMLPage.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

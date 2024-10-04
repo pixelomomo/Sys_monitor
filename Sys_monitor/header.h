@@ -4,6 +4,8 @@
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #include <Windows.h>
+#include <locale>
+#include <codecvt>
 #include <mysql_driver.h>
 #include <mysql_connection.h>
 #include <cppconn/statement.h>
@@ -30,6 +32,12 @@
 #include <Wt/WPopupMenu.h>
 #include <Wt/WSplitButton.h>
 #include <Wt/WStringListModel.h>
+#include <Wt/WMemoryResource.h>
+#include <Wt/WAnchor.h>
+#include <Wt/Http/Response.h>
+#include <Wt/Http/Request.h>
+#include <Wt/WLink.h>
+#include <memory_resource>
 #include <Wt/WProgressBar.h>
 #include <Wt/WLineEdit.h>
 #include <Wt/WPushButton.h>
@@ -58,5 +66,7 @@ void executeTest(const std::string& testID, const std::string& params, int warni
 void logToFile(const std::string& message, const std::string& fileName);
 std::string wcharToString(const wchar_t* wcharStr);
 void logMachineInfo(const std::string& logFileName);
+std::wstring utf8_to_utf16(const std::string& utf8_str);
+std::string utf16_to_utf8(const std::wstring& utf16_str);
 
 #endif

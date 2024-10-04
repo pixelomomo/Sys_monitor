@@ -62,4 +62,9 @@
       <Filter>Fichiers sources</Filter>
     </Text>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="HTMLPage.htm">
+      <Filter>Fichiers sources</Filter>
+    </None>
+  </ItemGroup>
 </Project>
