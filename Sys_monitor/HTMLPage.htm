@@ -45,12 +45,50 @@
         }
 
         function sauvegarderConfiguration() {
-            const testValue = document.getElementById('testInput').value;
-            const paramValue = document.getElementById('paramSelect').value;
+            // Récupérer toutes les valeurs des tests et des paramètres
+            const tests = document.querySelectorAll('.testInput');
+            const params = document.querySelectorAll('.paramSelect');
+
+            let content = '';
+            for (let i = 0; i < tests.length; i++) {
+                content += `Test : ${tests[i].value}, Paramètre : ${params[i].value}\n`;
+            }
+
             const filename = "configurations.txt";
-            const content = `Test : ${testValue}, Paramètre : ${paramValue}\n`;
             downloadFile(filename, content);
             document.getElementById("status").innerText = "Configuration prête pour le téléchargement.";
+        }
+
+        function ajouterChamp() {
+            // Créer un nouvel élément div pour ajouter un nouveau groupe de test/paramètre
+            const newInputGroup = document.createElement('div');
+            newInputGroup.classList.add('input-group');
+
+            const testLabel = document.createElement('label');
+            testLabel.innerText = 'Test :';
+            newInputGroup.appendChild(testLabel);
+
+            const testInput = document.createElement('input');
+            testInput.type = 'text';
+            testInput.classList.add('testInput');
+            testInput.placeholder = 'Entrez un test';
+            newInputGroup.appendChild(testInput);
+
+            const paramLabel = document.createElement('label');
+            paramLabel.innerText = ' Paramètre :';
+            newInputGroup.appendChild(paramLabel);
+
+            const paramSelect = document.createElement('select');
+            paramSelect.classList.add('paramSelect');
+            paramSelect.innerHTML = `
+                    <option value="C:\\">C:\\</option>
+                    <option value="D:\\">D:\\</option>
+                    <option value="E:\\">E:\\</option>
+                `;
+            newInputGroup.appendChild(paramSelect);
+
+            // Ajouter le nouveau groupe de champs dans le formulaire
+            document.getElementById('inputContainer').appendChild(newInputGroup);
         }
     </script>
 </head>
@@ -58,20 +96,21 @@
     <h1>Systeme Monitor</h1>
     <p id="status">Statut : En attente de sauvegarde...</p>
 
-    <div class="input-group">
-        <label for="testInput">Test :</label>
-        <input type="text" id="testInput" placeholder="Entrez un test">
+    <div id="inputContainer">
+        <!-- Champs dynamiques pour les tests et les paramètres -->
+        <div class="input-group">
+            <label for="testInput">Test :</label>
+            <input type="text" id="testInput" class="testInput" placeholder="Entrez un test">
+            <label for="paramSelect"> Paramètre :</label>
+            <select id="paramSelect" class="paramSelect">
+                <option value="C:\\">C:\\</option>
+                <option value="D:\\">D:\\</option>
+                <option value="E:\\">E:\\</option>
+            </select>
+        </div>
     </div>
 
-    <div class="input-group">
-        <label for="paramSelect">Paramètre :</label>
-        <select id="paramSelect">
-            <option value="C:\\">C:\\</option>
-            <option value="D:\\">D:\\</option>
-            <option value="E:\\">E:\\</option>
-        </select>
-    </div>
-
+    <button onclick="ajouterChamp()">Ajouter un test</button>
     <button onclick="sauvegarderConfiguration()">Sauvegarder Configuration</button>
 </body>
 </html>
