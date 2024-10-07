@@ -41,6 +41,7 @@
 #include <Wt/WProgressBar.h>
 #include <Wt/WLineEdit.h>
 #include <Wt/WPushButton.h>
+#include <Wt/WFileResource.h>
 #include <Wt/WText.h>
 
 using namespace std;

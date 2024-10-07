@@ -140,16 +140,16 @@ public:
         statusText_ = container->addWidget(std::make_unique<Wt::WText>());
 
         // Ajouter un bouton pour ouvrir le fichier HTML
-        Wt::WPushButton* openHtmlButton = container->addWidget(std::make_unique<Wt::WPushButton>(
-            Wt::WString::fromUTF8(u8"Télécharger")));
-        openHtmlButton->clicked().connect([this]() {
-            // Créer un lien vers le fichier HTML
-            std::string htmlPageLink = "HTMLPage.htm"; // Path to your HTML page
-            redirect(htmlPageLink);
-            });
+        //Wt::WPushButton* openHtmlButton = container->addWidget(std::make_unique<Wt::WPushButton>(
+        //    Wt::WString::fromUTF8(u8"Télécharger HTML")));
+        //openHtmlButton->clicked().connect([this]() {
+        //    // Créer un lien vers le fichier HTML
+        //    std::string htmlPageLink = "HTMLPage.htm"; // Chemin vers la page HTML
+        //    redirect(htmlPageLink);
+        //    });
 
         // Ajouter un bouton "New Config"
-        Wt::WPushButton* newConfigButton = root()->addWidget(std::make_unique<Wt::WPushButton>("New Config"));
+        Wt::WPushButton* newConfigButton = container->addWidget(std::make_unique<Wt::WPushButton>("New Config"));
         newConfigButton->clicked().connect([this, container]() {
             creerNouvelleConfiguration(container);
             });
@@ -172,40 +172,7 @@ private:
     void sauvegarderConfiguration(Wt::WContainerWidget* container) {
         std::stringstream fileStream;
 
-        for (const auto& configPair : configurations_) {
-            Wt::WComboBox* testComboBox = configPair.first;
-            Wt::WComboBox* paramComboBox = configPair.second;
-
-            std::string test = testComboBox->currentText().toUTF8();
-            std::string param = paramComboBox->currentText().toUTF8();
-            fileStream << "Test : " << test << ", Paramètre : " << param << "\n";
-        }
-
-        auto fileContent = fileStream.str();
-        auto fileName = "configurations.txt";
-
-        // Créez un fichier temporaire pour stocker le contenu
-        std::ofstream outFile(fileName);
-        if (outFile) {
-            outFile << fileContent;
-            outFile.close();
-        }
-        else {
-            statusText_->setText("Erreur lors de la création du fichier de configuration.");
-            return;
-        }
-
-        // Utilisez le nom du fichier pour créer un lien
-        Wt::WAnchor* downloadLink = container->addWidget(std::make_unique<Wt::WAnchor>());
-        downloadLink->setLink(Wt::WLink(fileName));
-        downloadLink->setText("Télécharger la configuration");
-
-        statusText_->setText("Configuration prête pour le téléchargement.");
-    }
-
-    void sauvegarderBoutonConfiguration(Wt::WContainerWidget* container) {
-        std::stringstream fileStream;
-
+        // Parcourez les configurations et récupérez les textes
         for (const auto& configPair : configurations_) {
             Wt::WComboBox* testComboBox = configPair.first;
             Wt::WComboBox* paramComboBox = configPair.second;
@@ -213,14 +180,60 @@ private:
             std::string test = testComboBox->currentText().toUTF8();
             std::string param = paramComboBox->currentText().toUTF8();
 
+            // Stockez le texte dans le flux
             fileStream << "Test : " << test << ", Paramètre : " << param << "\n";
         }
 
         std::string fileContent = fileStream.str();
         std::string fileName = "configurations.txt";
 
-        std::ofstream outFile(fileName);
+        // Écrire le contenu dans un fichier temporaire
+        std::ofstream outFile(fileName, std::ios::out | std::ios::binary);
         if (outFile) {
+            outFile << "\xEF\xBB\xBF"; // Ajout du BOM UTF-8
+            outFile << fileContent;
+            outFile.close();
+        }
+        else {
+            statusText_->setText(Wt::WString::fromUTF8("Erreur lors de la création du fichier de configuration."));
+            return;
+        }
+
+        // Utiliser Wt::WFileResource pour offrir le fichier en téléchargement
+        auto fileResource = std::make_shared<Wt::WFileResource>("text/plain", fileName);
+        fileResource->suggestFileName("configuration.txt");
+
+        // Créer un lien de téléchargement et l'ajouter au conteneur
+        Wt::WAnchor* downloadLink = container->addWidget(
+            std::make_unique<Wt::WAnchor>(Wt::WLink(fileResource), "Télécharger la configuration"));
+
+        // Mettre à jour le statut
+        statusText_->setText(Wt::WString::fromUTF8("Configuration prête pour le téléchargement."));
+    }
+
+    void sauvegarderBoutonConfiguration(Wt::WContainerWidget* container) {
+        std::stringstream fileStream;
+
+        // Parcourez les configurations et récupérez les textes
+        for (const auto& configPair : configurations_) {
+            Wt::WComboBox* testComboBox = configPair.first;
+            Wt::WComboBox* paramComboBox = configPair.second;
+
+            std::string test = testComboBox->currentText().toUTF8();
+            std::string param = paramComboBox->currentText().toUTF8();
+
+            // Stockez le texte dans le flux
+            fileStream << "Test : " << test << ", Paramètre : " << param << "\n";
+        }
+
+        std::string fileContent = fileStream.str();
+        std::string fileName = "configurations.txt";
+
+        // Créez le fichier avec l'encodage UTF-8
+        std::ofstream outFile(fileName, std::ios::out | std::ios::binary); // Ouverture en mode binaire
+        if (outFile) {
+            // Ajoutez le BOM UTF-8 pour indiquer clairement l'encodage
+            outFile << "\xEF\xBB\xBF";
             outFile << fileContent;
             outFile.close();
         }
@@ -229,6 +242,7 @@ private:
             return;
         }
 
+        // Créez un lien pour télécharger le fichier
         Wt::WAnchor* downloadLink = container->addWidget(std::make_unique<Wt::WAnchor>(Wt::WLink(fileName), "Télécharger la configuration"));
         statusText_->setText(Wt::WString::fromUTF8("Configuration prête pour le téléchargement."));
     }
