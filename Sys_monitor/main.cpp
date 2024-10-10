@@ -4,6 +4,14 @@
 #pragma execution_character_set("utf-8")
 using namespace std;
 
+SERVICE_STATUS serviceStatus = {};
+SERVICE_STATUS_HANDLE hStatus = nullptr;
+
+//void ServiceMain(DWORD argc, LPTSTR* argv);
+//void ServiceCtrlHandler(DWORD request);
+//void StartServiceFunction();
+HANDLE g_ServiceStopEvent = NULL;
+
 void network_checker_wrapper(const std::string& adapterName, const std::string& logFileName) {
     network_checker(adapterName, logFileName);
 }
@@ -111,7 +119,292 @@ void generateConfigFile() {
     }
 }
 
-class MyMemoryResource : public std::pmr::memory_resource {
+//void ServiceCtrlHandler(DWORD request) {
+//    switch (request) {
+//    case SERVICE_CONTROL_STOP:
+//        serviceStatus.dwWin32ExitCode = 0;
+//        serviceStatus.dwCurrentState = SERVICE_STOPPED;
+//        SetServiceStatus(hStatus, &serviceStatus);
+//        return;
+//
+//    case SERVICE_CONTROL_SHUTDOWN:
+//        serviceStatus.dwWin32ExitCode = 0;
+//        serviceStatus.dwCurrentState = SERVICE_STOPPED;
+//        SetServiceStatus(hStatus, &serviceStatus);
+//        return;
+//
+//    default:
+//        break;
+//    }
+//
+//    SetServiceStatus(hStatus, &serviceStatus);
+//}
+
+/*void StartServiceFunction() {
+    // Ici, vous appelez vos fonctions spécifiques au projet
+    // Exemple :
+    while (serviceStatus.dwCurrentState == SERVICE_RUNNING) {
+        // Exécutez votre logique de surveillance ici
+        disk_free_space(L"C:\\", 80, "logFile.txt");
+        list_removable_drives("logFile.txt");
+
+        // Délai pour éviter une boucle infinie
+        Sleep(5000); // 5 secondes
+    }
+}
+
+void ServiceMain(DWORD argc, LPTSTR* argv) {
+    OutputDebugString(L"ServiceMain démarré\n");
+
+    serviceStatus.dwServiceType = SERVICE_WIN32_OWN_PROCESS;
+    serviceStatus.dwCurrentState = SERVICE_START_PENDING;
+    serviceStatus.dwControlsAccepted = SERVICE_ACCEPT_STOP | SERVICE_ACCEPT_SHUTDOWN;
+    serviceStatus.dwWin32ExitCode = 0;
+    serviceStatus.dwServiceSpecificExitCode = 0;
+    serviceStatus.dwCheckPoint = 0;
+    serviceStatus.dwWaitHint = 5000;  // Délai d'attente (5 secondes)
+
+    hStatus = RegisterServiceCtrlHandler(L"Sys_monitor", (LPHANDLER_FUNCTION)ServiceCtrlHandler);
+    if (hStatus == nullptr) {
+        OutputDebugString(L"Échec de l'enregistrement du ServiceCtrlHandler\n");
+        return;
+    }
+
+    // Signaler que le service est en cours de démarrage
+    OutputDebugString(L"Service en cours de démarrage\n");
+    SetServiceStatus(hStatus, &serviceStatus);
+
+    Sleep(3000);  // Simuler un délai de démarrage
+
+    // Signaler que le service est maintenant en cours d’exécution
+    serviceStatus.dwCurrentState = SERVICE_RUNNING;
+    SetServiceStatus(hStatus, &serviceStatus);
+    OutputDebugString(L"Service en cours d'exécution\n");
+
+    // Appel à la fonction principale du service
+    StartServiceFunction();
+}*/
+
+void LogEvent(const std::string& message) {
+    std::string logDirectory = "C:\\Users\\niz_h\\source\\repos\\Sys_monitor\\Sys_monitor\\";
+    std::string logPath = logDirectory + "logFile.txt";
+
+    // Créer le répertoire s'il n'existe pas
+    DWORD ftyp = GetFileAttributesA(logDirectory.c_str());
+    if (ftyp == INVALID_FILE_ATTRIBUTES) {
+        // Le répertoire n'existe pas, essayer de le créer
+        if (!CreateDirectoryA(logDirectory.c_str(), NULL)) {
+            // Si la création échoue, enregistrer l'erreur dans le journal des événements
+            HANDLE hEventSource = RegisterEventSource(NULL, L"SystemMonitor");
+            if (hEventSource != NULL) {
+                LPCSTR strings[1];
+                std::string errorMsg = "Erreur lors de la création du répertoire de journalisation: " + std::to_string(GetLastError());
+                strings[0] = errorMsg.c_str();
+                ReportEventA(
+                    hEventSource,
+                    EVENTLOG_ERROR_TYPE,
+                    0,
+                    0,
+                    NULL,
+                    1,
+                    0,
+                    strings,
+                    NULL
+                );
+                DeregisterEventSource(hEventSource);
+            }
+            return;
+        }
+    }
+
+    // Ouvrir le fichier en mode ajout
+    std::ofstream logFile(logPath, std::ios_base::app);
+    if (logFile.is_open()) {
+        logFile << message << std::endl;
+    }
+    else {
+        // Si l'ouverture du fichier échoue, enregistrer l'erreur dans le journal des événements
+        HANDLE hEventSource = RegisterEventSource(NULL, L"SystemMonitor");
+        if (hEventSource != NULL) {
+            LPCSTR strings[1];
+            std::string errorMsg = "Erreur lors de l'ouverture du fichier de journalisation: " + std::to_string(GetLastError());
+            strings[0] = errorMsg.c_str();
+            ReportEventA(
+                hEventSource,
+                EVENTLOG_ERROR_TYPE,
+                0,
+                0,
+                NULL,
+                1,
+                0,
+                strings,
+                NULL
+            );
+            DeregisterEventSource(hEventSource);
+        }
+    }
+}
+
+// Gestionnaire de contrôle
+void WINAPI ServiceCtrlHandler(DWORD CtrlCode)
+{
+    switch (CtrlCode) {
+    case SERVICE_CONTROL_STOP:
+    case SERVICE_CONTROL_SHUTDOWN:
+        if (serviceStatus.dwCurrentState != SERVICE_RUNNING)
+            break;
+
+        // Indiquer que le service est en cours d'arrêt
+        serviceStatus.dwCurrentState = SERVICE_STOP_PENDING;
+        SetServiceStatus(hStatus, &serviceStatus);
+
+        // Signaler l'événement de stop
+        SetEvent(g_ServiceStopEvent);
+        break;
+    default:
+        break;
+    }
+}
+
+// Fonction de démarrage du service
+void StartServiceFunction()
+{
+    std::thread monitoringThread([] {
+        while (serviceStatus.dwCurrentState == SERVICE_RUNNING) {
+            // Votre logique de surveillance
+            // Exemple :
+            disk_free_space(L"C:\\", 80, "C:\\Users\\niz_h\\source\\repos\\Sys_monitor\\Sys_monitor\\logFile.txt");
+            disk_free_space(L"D:\\", 80, "C:\\Users\\niz_h\\source\\repos\\Sys_monitor\\Sys_monitor\\logFile.txt");
+            list_removable_drives("C:\\Users\\niz_h\\source\\repos\\Sys_monitor\\Sys_monitor\\logFile.txt");
+
+
+            // Délai pour éviter une boucle infinie
+            Sleep(6000);  // 5 secondes
+        }
+        });
+
+    // Détacher le thread pour qu'il fonctionne indépendamment
+    monitoringThread.detach();
+}
+
+// Fonction principale du service
+void ServiceMain(DWORD argc, LPTSTR* argv)
+{
+    // Initialisation du service
+    serviceStatus.dwServiceType = SERVICE_WIN32_OWN_PROCESS;
+    serviceStatus.dwCurrentState = SERVICE_START_PENDING;
+    serviceStatus.dwControlsAccepted = SERVICE_ACCEPT_STOP | SERVICE_ACCEPT_SHUTDOWN;
+    serviceStatus.dwWin32ExitCode = 0;
+    serviceStatus.dwServiceSpecificExitCode = 0;
+    serviceStatus.dwCheckPoint = 0;
+    serviceStatus.dwWaitHint = 10000;  // Attendre jusqu'à 10 secondes
+
+    // Enregistrer le gestionnaire de contrôle
+    hStatus = RegisterServiceCtrlHandler(L"Sys_monitor", ServiceCtrlHandler);
+    if (!hStatus) {
+        LogEvent("Erreur lors de l'enregistrement du gestionnaire de contrôle");
+        return;
+    }
+
+    // Créer un événement pour gérer l'arrêt du service
+    g_ServiceStopEvent = CreateEvent(NULL, TRUE, FALSE, NULL);
+    if (g_ServiceStopEvent == NULL) {
+        LogEvent("Erreur lors de la création de l'événement de stop");
+        serviceStatus.dwCurrentState = SERVICE_STOPPED;
+        SetServiceStatus(hStatus, &serviceStatus);
+        return;
+    }
+
+    // Signaler que le service est en cours de démarrage
+    SetServiceStatus(hStatus, &serviceStatus);
+
+    // Simuler un délai de démarrage
+    Sleep(3000);  // 3 secondes
+
+    // Indiquer que le service est démarré
+    serviceStatus.dwCurrentState = SERVICE_RUNNING;
+    serviceStatus.dwCheckPoint = 0;
+    serviceStatus.dwWaitHint = 0;
+
+    if (!SetServiceStatus(hStatus, &serviceStatus)) {
+        LogEvent("Erreur lors de la mise à jour du statut SERVICE_RUNNING");
+        return;
+    }
+
+    // Démarrer la fonction principale du service
+    StartServiceFunction();
+
+    // Attendre que l'événement de stop soit signalé
+    WaitForSingleObject(g_ServiceStopEvent, INFINITE);
+
+    // Effectuer les opérations de nettoyage ici si nécessaire
+
+    // Indiquer que le service est arrêté
+    serviceStatus.dwCurrentState = SERVICE_STOPPED;
+    SetServiceStatus(hStatus, &serviceStatus);
+}
+
+// Fonction d'installation du service
+void InstallService(const std::wstring& serviceName, const std::wstring& displayName, const std::wstring& binaryPath) {
+    SC_HANDLE hSCManager = OpenSCManager(nullptr, nullptr, SC_MANAGER_CREATE_SERVICE);
+    if (hSCManager == nullptr) {
+        std::cerr << "Erreur lors de l'ouverture de SCManager : " << GetLastError() << std::endl;
+        LogEvent("Erreur lors de l'ouverture de SCManager : " + std::to_string(GetLastError()));
+        return;
+    }
+
+    SC_HANDLE hService = CreateServiceW(
+        hSCManager,
+        serviceName.c_str(),
+        displayName.c_str(),
+        SERVICE_ALL_ACCESS,
+        SERVICE_WIN32_OWN_PROCESS,
+        SERVICE_DEMAND_START, // Démarrage manuel
+        SERVICE_ERROR_NORMAL,
+        binaryPath.c_str(),
+        nullptr, nullptr, nullptr, nullptr, nullptr);
+
+    if (hService == nullptr) {
+        std::cerr << "Erreur lors de la création du service : " << GetLastError() << std::endl;
+        LogEvent("Erreur lors de la création du service : " + std::to_string(GetLastError()));
+    }
+    else {
+        std::cout << "Service installé avec succès" << std::endl;
+        LogEvent("Service installé avec succès");
+        CloseServiceHandle(hService);
+    }
+
+    CloseServiceHandle(hSCManager);
+}
+
+int main()
+{
+    // Tenter de démarrer le service
+    SERVICE_TABLE_ENTRY ServiceTable[] = {
+        { const_cast<LPWSTR>(L"Sys_monitor"), (LPSERVICE_MAIN_FUNCTION)ServiceMain },
+        { nullptr, nullptr }
+    };
+
+    if (!StartServiceCtrlDispatcher(ServiceTable)) {
+        DWORD error = GetLastError();
+        if (error == ERROR_FAILED_SERVICE_CONTROLLER_CONNECT) {
+            // L'exécutable n'est pas lancé par le SCM, donc installer le service
+            std::wcout << L"Installation du service..." << std::endl;
+            // Chemin vers le même exécutable
+            wchar_t path[MAX_PATH];
+            GetModuleFileNameW(NULL, path, MAX_PATH);
+            std::wstring binaryPath = (L"C:\\Users\\niz_h\\source\\repos\\Sys_monitor\\x64\\Release\\Sys_monitor.exe");
+            InstallService(L"Sys_monitor", L"System Monitor", binaryPath);
+        }
+        else {
+            LogEvent("Erreur lors du démarrage du Service Control Dispatcher : " + std::to_string(error));
+        }
+    }
+
+    return 0;
+}
+
+/*class MyMemoryResource : public std::pmr::memory_resource {
 protected:
     void* do_allocate(std::size_t bytes, std::size_t alignment) override {
         return ::operator new(bytes); // Utilisez l'opérateur new standard
@@ -517,13 +810,20 @@ Wt::WApplication* createApplication(const Wt::WEnvironment& env) {
     ajouterNouveauParametre(container, session);
 
     return app.release();
-}
+} */
 
-int main(int argc, char** argv) {
+/*int main(int argc, char** argv) {
     return Wt::WRun(argc, argv, [](const Wt::WEnvironment& env) {
         return std::make_unique<DropdownExampleApp>(env);
         });
-}
+}*/
+
+//int main() {
+//    // Chemin vers l'exécutable du service
+//    std::wstring binaryPath = L"C:\\path\\to\\your\\executable.exe";
+//    InstallService(L"YourServiceName", L"Display Name of Your Service", binaryPath);
+//    return 0;
+//}
 
 /*int main() {
     MyMemoryResource myResource;

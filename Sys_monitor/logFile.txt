@@ -1,0 +1,325 @@
+Service installÃ© avec succÃ¨s
+[10-10-2024 15:25:15] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:25:15] Lecteurs amovibles détectés :
+
+[10-10-2024 15:25:20] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:25:20] Lecteurs amovibles détectés :
+
+[10-10-2024 15:25:25] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:25:25] Lecteurs amovibles détectés :
+
+[10-10-2024 15:25:30] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:25:30] Lecteurs amovibles détectés :
+
+[10-10-2024 15:25:35] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:25:35] Lecteurs amovibles détectés :
+
+[10-10-2024 15:25:40] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:25:40] Lecteurs amovibles détectés :
+
+[10-10-2024 15:25:45] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:25:45] Lecteurs amovibles détectés :
+
+[10-10-2024 15:25:50] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:25:50] Lecteurs amovibles détectés :
+
+[10-10-2024 15:25:55] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:25:55] Lecteurs amovibles détectés :
+
+[10-10-2024 15:26:00] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:26:00] Lecteurs amovibles détectés :
+
+[10-10-2024 15:26:05] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:26:05] Lecteurs amovibles détectés :
+
+[10-10-2024 15:26:10] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:26:10] Lecteurs amovibles détectés :
+
+[10-10-2024 15:26:15] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:26:15] Lecteurs amovibles détectés :
+
+[10-10-2024 15:26:20] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:26:20] Lecteurs amovibles détectés :
+
+[10-10-2024 15:26:25] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:26:25] Lecteurs amovibles détectés :
+
+[10-10-2024 15:26:30] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:26:30] Lecteurs amovibles détectés :
+
+[10-10-2024 15:26:35] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:26:35] Lecteurs amovibles détectés :
+
+[10-10-2024 15:26:40] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:26:40] Lecteurs amovibles détectés :
+
+[10-10-2024 15:26:45] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:26:45] Lecteurs amovibles détectés :
+
+[10-10-2024 15:26:50] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:26:50] Lecteurs amovibles détectés :
+
+[10-10-2024 15:26:55] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:26:55] Lecteurs amovibles détectés :
+
+[10-10-2024 15:27:00] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:27:00] Lecteurs amovibles détectés :
+
+[10-10-2024 15:27:05] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:27:05] Lecteurs amovibles détectés :
+
+[10-10-2024 15:27:10] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:27:10] Lecteurs amovibles détectés :
+
+[10-10-2024 15:27:15] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:27:15] Lecteurs amovibles détectés :
+
+[10-10-2024 15:27:20] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:27:20] Lecteurs amovibles détectés :
+
+[10-10-2024 15:27:25] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:27:25] Lecteurs amovibles détectés :
+
+[10-10-2024 15:27:30] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:27:30] Lecteurs amovibles détectés :
+
+[10-10-2024 15:27:35] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:27:35] Lecteurs amovibles détectés :
+
+[10-10-2024 15:27:40] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:27:40] Lecteurs amovibles détectés :
+
+[10-10-2024 15:27:45] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:27:45] Lecteurs amovibles détectés :
+
+[10-10-2024 15:27:50] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:27:50] Lecteurs amovibles détectés :
+
+[10-10-2024 15:27:55] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:27:55] Lecteurs amovibles détectés :
+
+[10-10-2024 15:28:00] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:28:00] Lecteurs amovibles détectés :
+
+[10-10-2024 15:28:05] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:28:05] Lecteurs amovibles détectés :
+
+[10-10-2024 15:28:10] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:28:10] Lecteurs amovibles détectés :
+
+[10-10-2024 15:28:15] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:28:15] Lecteurs amovibles détectés :
+
+[10-10-2024 15:28:20] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:28:20] Lecteurs amovibles détectés :
+
+[10-10-2024 15:28:25] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:28:25] Lecteurs amovibles détectés :
+
+[10-10-2024 15:28:30] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:28:30] Lecteurs amovibles détectés :
+
+[10-10-2024 15:28:35] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:28:35] Lecteurs amovibles détectés :
+
+[10-10-2024 15:28:40] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:28:40] Lecteurs amovibles détectés :
+
+[10-10-2024 15:28:45] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:28:45] Lecteurs amovibles détectés :
+
+[10-10-2024 15:28:50] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:28:50] Lecteurs amovibles détectés :
+
+[10-10-2024 15:28:55] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:28:55] Lecteurs amovibles détectés :
+
+[10-10-2024 15:29:00] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:29:00] Lecteurs amovibles détectés :
+
+[10-10-2024 15:29:05] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:29:05] Lecteurs amovibles détectés :
+
+[10-10-2024 15:29:10] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:29:10] Lecteurs amovibles détectés :
+
+[10-10-2024 15:29:15] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:29:15] Lecteurs amovibles détectés :
+
+[10-10-2024 15:29:20] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:29:20] Lecteurs amovibles détectés :
+
+[10-10-2024 15:29:25] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:29:25] Lecteurs amovibles détectés :
+
+[10-10-2024 15:29:30] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:29:30] Lecteurs amovibles détectés :
+
+[10-10-2024 15:29:35] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:29:35] Lecteurs amovibles détectés :
+
+[10-10-2024 15:29:40] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:29:40] Lecteurs amovibles détectés :
+
+[10-10-2024 15:29:45] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:29:45] Lecteurs amovibles détectés :
+
+[10-10-2024 15:29:50] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:29:50] Lecteurs amovibles détectés :
+
+[10-10-2024 15:29:55] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:29:55] Lecteurs amovibles détectés :
+
+[10-10-2024 15:30:00] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:30:00] Lecteurs amovibles détectés :
+
+[10-10-2024 15:30:05] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:30:05] Lecteurs amovibles détectés :
+
+[10-10-2024 15:30:10] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:30:10] Lecteurs amovibles détectés :
+
+[10-10-2024 15:30:15] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:30:15] Lecteurs amovibles détectés :
+
+[10-10-2024 15:30:20] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:30:20] Lecteurs amovibles détectés :
+
+[10-10-2024 15:30:25] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:30:25] Lecteurs amovibles détectés :
+
+[10-10-2024 15:30:30] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:30:30] Lecteurs amovibles détectés :
+
+[10-10-2024 15:30:35] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:30:35] Lecteurs amovibles détectés :
+
+[10-10-2024 15:30:40] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:30:40] Lecteurs amovibles détectés :
+
+[10-10-2024 15:30:45] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:30:45] Lecteurs amovibles détectés :
+
+[10-10-2024 15:30:50] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:30:50] Lecteurs amovibles détectés :
+
+[10-10-2024 15:30:55] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:30:55] Lecteurs amovibles détectés :
+
+[10-10-2024 15:31:00] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:31:00] Lecteurs amovibles détectés :
+
+[10-10-2024 15:31:05] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:31:05] Lecteurs amovibles détectés :
+
+[10-10-2024 15:31:10] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:31:10] Lecteurs amovibles détectés :
+
+[10-10-2024 15:31:15] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:31:15] Lecteurs amovibles détectés :
+
+[10-10-2024 15:31:20] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:31:20] Lecteurs amovibles détectés :
+
+[10-10-2024 15:31:25] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:31:25] Lecteurs amovibles détectés :
+
+[10-10-2024 15:31:30] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:31:30] Lecteurs amovibles détectés :
+
+[10-10-2024 15:31:35] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:31:35] Lecteurs amovibles détectés :
+
+[10-10-2024 15:31:40] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:31:40] Lecteurs amovibles détectés :
+
+[10-10-2024 15:31:45] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:31:45] Lecteurs amovibles détectés :
+
+[10-10-2024 15:31:50] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:31:50] Lecteurs amovibles détectés :
+
+[10-10-2024 15:31:55] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:31:55] Lecteurs amovibles détectés :
+
+[10-10-2024 15:32:00] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:32:00] Lecteurs amovibles détectés :
+
+[10-10-2024 15:32:06] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:32:06] Lecteurs amovibles détectés :
+
+[10-10-2024 15:32:11] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:32:11] Lecteurs amovibles détectés :
+
+[10-10-2024 15:32:16] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:32:16] Lecteurs amovibles détectés :
+
+[10-10-2024 15:32:21] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:32:21] Lecteurs amovibles détectés :
+
+[10-10-2024 15:32:26] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:32:26] Lecteurs amovibles détectés :
+
+[10-10-2024 15:32:31] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:32:31] Lecteurs amovibles détectés :
+
+[10-10-2024 15:32:36] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:32:36] Lecteurs amovibles détectés :
+
+[10-10-2024 15:32:41] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:32:41] Lecteurs amovibles détectés :
+
+[10-10-2024 15:32:46] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:32:46] Lecteurs amovibles détectés :
+
+[10-10-2024 15:32:51] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:32:51] Lecteurs amovibles détectés :
+
+[10-10-2024 15:32:56] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:32:56] Lecteurs amovibles détectés :
+
+[10-10-2024 15:33:01] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:33:01] Lecteurs amovibles détectés :
+
+[10-10-2024 15:33:06] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:33:06] Lecteurs amovibles détectés :
+
+[10-10-2024 15:33:11] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:33:11] Lecteurs amovibles détectés :
+
+[10-10-2024 15:33:16] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:33:16] Lecteurs amovibles détectés :
+
+Erreur lors de la crÃ©ation du service : 1073
+Service installÃ© avec succÃ¨s
+[10-10-2024 15:47:37] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:47:37] Le lecteur D:\ est utilisé à 81%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+
+Service installÃ© avec succÃ¨s
+[10-10-2024 15:54:59] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:54:59] Le lecteur D:\ est utilisé à 81%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+Service installÃ© avec succÃ¨s
+[10-10-2024 15:56:34] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:56:34] Le lecteur D:\ est utilisé à 81%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:56:34] Lecteurs amovibles détectés :
+
+[10-10-2024 15:56:40] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:56:40] Le lecteur D:\ est utilisé à 81%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:56:40] Lecteurs amovibles détectés :
+
+[10-10-2024 15:56:46] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:56:46] Le lecteur D:\ est utilisé à 81%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:56:46] Lecteurs amovibles détectés :
+
+[10-10-2024 15:56:52] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:56:52] Le lecteur D:\ est utilisé à 81%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:56:52] Lecteurs amovibles détectés :
+
+[10-10-2024 15:56:58] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:56:58] Le lecteur D:\ est utilisé à 81%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:56:58] Lecteurs amovibles détectés :
+
+[10-10-2024 15:57:04] Le lecteur C:\ est utilisé à 95%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:57:04] Le lecteur D:\ est utilisé à 81%. AVERTISSEMENT: Seuil d'avertissement atteint (80%).
+[10-10-2024 15:57:04] Lecteurs amovibles détectés :
+

@@ -61,6 +61,12 @@
     <Text Include="config2.txt">
       <Filter>Fichiers sources</Filter>
     </Text>
+    <Text Include="logFile.txt">
+      <Filter>Fichiers sources</Filter>
+    </Text>
+    <Text Include="service_log.txt">
+      <Filter>Fichiers sources</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <None Include="HTMLPage.htm">

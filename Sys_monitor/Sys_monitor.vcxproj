@@ -72,6 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LibraryPath>C:\Wt 4.10.4 msvs2022 x64\lib;$(LibraryPath)</LibraryPath>
+    <TargetName>Sys_monitor.exe</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -155,6 +156,8 @@
   <ItemGroup>
     <Text Include="config.txt" />
     <Text Include="config2.txt" />
+    <Text Include="logFile.txt" />
+    <Text Include="service_log.txt" />
     <Text Include="system_monitor_log.txt" />
   </ItemGroup>
   <ItemGroup>
