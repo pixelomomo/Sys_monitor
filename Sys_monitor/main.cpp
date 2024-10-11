@@ -276,10 +276,11 @@ void StartServiceFunction()
             disk_free_space(L"C:\\", 80, "C:\\Users\\niz_h\\source\\repos\\Sys_monitor\\Sys_monitor\\logFile.txt");
             disk_free_space(L"D:\\", 80, "C:\\Users\\niz_h\\source\\repos\\Sys_monitor\\Sys_monitor\\logFile.txt");
             list_removable_drives("C:\\Users\\niz_h\\source\\repos\\Sys_monitor\\Sys_monitor\\logFile.txt");
+            ListRunningServices("C:\\Users\\niz_h\\source\\repos\\Sys_monitor\\Sys_monitor\\logFile.txt");
 
 
             // Délai pour éviter une boucle infinie
-            Sleep(6000);  // 5 secondes
+            Sleep(60000);
         }
         });
 

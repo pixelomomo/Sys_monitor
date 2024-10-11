@@ -43,6 +43,7 @@
 #include <Wt/WPushButton.h>
 #include <Wt/WFileResource.h>
 #include <Wt/WText.h>
+#include <thread>
 
 using namespace std;
 
